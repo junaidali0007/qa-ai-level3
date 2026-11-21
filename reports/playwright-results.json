@@ -1,0 +1,623 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\playwright.config.ts",
+    "rootDir": "C:/Users/HP/VisualStudioCodeProjects/qa-ai-level3/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/HP/VisualStudioCodeProjects/qa-ai-level3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Microsoft Edge",
+        "name": "Microsoft Edge",
+        "testDir": "C:/Users/HP/VisualStudioCodeProjects/qa-ai-level3/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 50000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "Microsoft Edge",
+        "testDir": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests",
+        "snapshotDir": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 50000,
+        "use": {
+          "baseURL": "https://automationexercise.com",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "actionTimeout": 15000,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36 Edg/159.0.8154.6",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "Microsoft Edge"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/playwright-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/junit-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\catalog-and-auth.spec.ts",
+      "file": "api/catalog-and-auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Catalog & Accounts API Contracts @api",
+          "file": "api/catalog-and-auth.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "lists products and validates schema fields",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1628,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:15.468Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c04e2a7e6112401d2857-17d95934476cad547ce7",
+              "file": "api/catalog-and-auth.spec.ts",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "searches products by keyword and returns matching items",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1546,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:15.466Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c04e2a7e6112401d2857-081d93051f4ee31e69d2",
+              "file": "api/catalog-and-auth.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "verifies provisioned account credentials via verifyLogin",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1329,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:17.039Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c04e2a7e6112401d2857-c417a8caa991f6d43e2c",
+              "file": "api/catalog-and-auth.spec.ts",
+              "line": 33,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\ancillary\\home-navigation.spec.ts",
+      "file": "ui/ancillary/home-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Home & Ancillary Navigation @ui @ancillary @smoke",
+          "file": "ui/ancillary/home-navigation.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "AE-01 @smoke @P0 loads home page and verifies primary navigation links",
+              "ok": true,
+              "tags": [
+                "ui",
+                "ancillary",
+                "smoke",
+                "smoke",
+                "P0"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2318,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:17.125Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1e19738c0087a8cd88a-ac565af4e5c051afcfbd",
+              "file": "ui/ancillary/home-navigation.spec.ts",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "AE-02 @smoke navigates between Products, Cart, and Signup/Login views",
+              "ok": true,
+              "tags": [
+                "ui",
+                "ancillary",
+                "smoke",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:18.383Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a1e19738c0087a8cd88a-76e515fe88640da33cd8",
+              "file": "ui/ancillary/home-navigation.spec.ts",
+              "line": 17,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\auth\\login.spec.ts",
+      "file": "ui/auth/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication Flow @ui @auth",
+          "file": "ui/auth/login.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "signs in with provisioned account credentials",
+              "ok": true,
+              "tags": [
+                "ui",
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6786,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:19.666Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2d96d947731fd09b1cd-daded8ed54bed944c949",
+              "file": "ui/auth/login.spec.ts",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\cart\\cart-mutations.spec.ts",
+      "file": "ui/cart/cart-mutations.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cart Item Add & Remove @ui @cart",
+          "file": "ui/cart/cart-mutations.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "adds a product to cart and removes it",
+              "ok": true,
+              "tags": [
+                "ui",
+                "cart"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6382,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:23.444Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "023bc626bf7762f06856-fc6b0381b2e666e0004d",
+              "file": "ui/cart/cart-mutations.spec.ts",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\catalog\\product-search.spec.ts",
+      "file": "ui/catalog/product-search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Product Catalog Search @ui @catalog",
+          "file": "ui/catalog/product-search.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "searches catalog for matching products",
+              "ok": true,
+              "tags": [
+                "ui",
+                "catalog"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3786,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:26.465Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "05ba70852db50f7beeed-865621f595b1ca970fa3",
+              "file": "ui/catalog/product-search.spec.ts",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\catalog\\smoke-catalogue.spec.ts",
+      "file": "ui/catalog/smoke-catalogue.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Catalog Smoke @ui @catalog @smoke",
+          "file": "ui/catalog/smoke-catalogue.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "loads products catalog and displays product cards",
+              "ok": true,
+              "tags": [
+                "ui",
+                "catalog",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6146,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:29.841Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c1e0b130f4048e2b4c7-3f2c01d4a1d2ed7e515a",
+              "file": "ui/catalog/smoke-catalogue.spec.ts",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\checkout\\authenticated-checkout.spec.ts",
+      "file": "ui/checkout/authenticated-checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authenticated Product Search & Checkout Flow @ui",
+          "file": "ui/checkout/authenticated-checkout.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "logs in with provisioned account, adds product to cart, and reaches checkout",
+              "ok": true,
+              "tags": [
+                "ui"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Microsoft Edge",
+                  "projectName": "Microsoft Edge",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10753,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-21T16:02:30.264Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f67170373fe8732c3add-6522d265de7a99f2028a",
+              "file": "ui/checkout/authenticated-checkout.spec.ts",
+              "line": 5,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-21T16:02:14.922Z",
+    "duration": 27013.130999999998,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

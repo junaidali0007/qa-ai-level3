@@ -1,0 +1,29 @@
+﻿{
+  "name": "qa-ai-level3",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "format:check": "prettier --check \"**/*.{ts,md,json,yml}\"",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api",
+    "rca:collect": "npx tsx tools/rca/collect.ts",
+    "rca:analyze": "npx tsx tools/rca/analyze.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}
