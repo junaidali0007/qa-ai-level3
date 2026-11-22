@@ -1,36 +1,20 @@
-<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="27.013130999999998">
-<testsuite name="api\catalog-and-auth.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="3" failures="0" skipped="0" time="4.503" errors="0">
-<testcase name="Catalog &amp; Accounts API Contracts @api › lists products and validates schema fields" classname="api\catalog-and-auth.spec.ts" time="1.628">
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="21.689859999999996">
+<testsuite name="api\catalog-and-auth.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="3" failures="0" skipped="0" time="3.684" errors="0">
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-03 @api @negative returns 404 in payload for non-existent login credentials" classname="api\catalog-and-auth.spec.ts" time="1.548">
 </testcase>
-<testcase name="Catalog &amp; Accounts API Contracts @api › searches products by keyword and returns matching items" classname="api\catalog-and-auth.spec.ts" time="1.546">
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-04 @api @negative returns 400 in payload when email parameter is omitted from verifyLogin" classname="api\catalog-and-auth.spec.ts" time="0.806">
 </testcase>
-<testcase name="Catalog &amp; Accounts API Contracts @api › verifies provisioned account credentials via verifyLogin" classname="api\catalog-and-auth.spec.ts" time="1.329">
-</testcase>
-</testsuite>
-<testsuite name="ui\ancillary\home-navigation.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="2" failures="0" skipped="0" time="7.113" errors="0">
-<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-01 @smoke @P0 loads home page and verifies primary navigation links" classname="ui\ancillary\home-navigation.spec.ts" time="2.318">
-</testcase>
-<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-02 @smoke navigates between Products, Cart, and Signup/Login views" classname="ui\ancillary\home-navigation.spec.ts" time="4.795">
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-05 @api @negative returns 400 in payload when registering with an already existing email" classname="api\catalog-and-auth.spec.ts" time="1.33">
 </testcase>
 </testsuite>
-<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="6.786" errors="0">
-<testcase name="Authentication Flow @ui @auth › signs in with provisioned account credentials" classname="ui\auth\login.spec.ts" time="6.786">
+<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="2" failures="0" skipped="0" time="7.406" errors="0">
+<testcase name="Authentication Flow @ui @auth › AE-AUTH-02 @ui @auth @negative shows error message for invalid login credentials" classname="ui\auth\login.spec.ts" time="3.295">
+</testcase>
+<testcase name="Authentication Flow @ui @auth › AE-AUTH-03 @ui @auth @negative prevents signup when email already exists" classname="ui\auth\login.spec.ts" time="4.111">
 </testcase>
 </testsuite>
-<testsuite name="ui\cart\cart-mutations.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="6.382" errors="0">
-<testcase name="Cart Item Add &amp; Remove @ui @cart › adds a product to cart and removes it" classname="ui\cart\cart-mutations.spec.ts" time="6.382">
-</testcase>
-</testsuite>
-<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="3.786" errors="0">
-<testcase name="Product Catalog Search @ui @catalog › searches catalog for matching products" classname="ui\catalog\product-search.spec.ts" time="3.786">
-</testcase>
-</testsuite>
-<testsuite name="ui\catalog\smoke-catalogue.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="6.146" errors="0">
-<testcase name="Catalog Smoke @ui @catalog @smoke › loads products catalog and displays product cards" classname="ui\catalog\smoke-catalogue.spec.ts" time="6.146">
-</testcase>
-</testsuite>
-<testsuite name="ui\checkout\authenticated-checkout.spec.ts" timestamp="2026-11-21T16:02:15.055Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="10.753" errors="0">
-<testcase name="Authenticated Product Search &amp; Checkout Flow @ui › logs in with provisioned account, adds product to cart, and reaches checkout" classname="ui\checkout\authenticated-checkout.spec.ts" time="10.753">
+<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="3.797" errors="0">
+<testcase name="Product Catalog Search @ui @catalog › AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query" classname="ui\catalog\product-search.spec.ts" time="3.797">
 </testcase>
 </testsuite>
 </testsuites>
