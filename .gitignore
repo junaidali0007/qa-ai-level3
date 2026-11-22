@@ -5,3 +5,5 @@ blob-report/
 playwright/.cache/
 artifacts/rca/
 .env
+
+reports/

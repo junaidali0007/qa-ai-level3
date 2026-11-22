@@ -1,0 +1,68 @@
+name: Playwright QA & Automated RCA
+
+on:
+  push:
+    branches: [main, 'feat/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  e2e-and-api:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Microsoft Edge for Playwright
+        run: npx playwright install --with-deps msedge
+
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Run Playwright suite (single worker)
+        env:
+          CI: true
+          BASE_URL: ${{ vars.BASE_URL || 'https://automationexercise.com' }}
+        run: npx playwright test --workers=1
+
+      - name: Collect & analyze RCA on failure
+        if: failure()
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+        run: |
+          npm run rca:collect
+          npm run rca:analyze
+
+      - name: Upload Playwright HTML & raw reports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-reports-${{ github.run_number }}
+          path: |
+            playwright-report/
+            reports/
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Upload RCA report & failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: rca-diagnostics-${{ github.run_number }}
+          path: |
+            artifacts/rca/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14

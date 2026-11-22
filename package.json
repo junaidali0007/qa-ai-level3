@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "qa-ai-level3",
   "version": "1.0.0",
   "private": true,
@@ -11,8 +11,8 @@
     "test:smoke": "playwright test --grep @smoke",
     "test:ui": "playwright test tests/ui",
     "test:api": "playwright test tests/api",
-    "rca:collect": "npx tsx tools/rca/collect.ts",
-    "rca:analyze": "npx tsx tools/rca/analyze.ts"
+    "rca:collect": "tsx tools/rca/collect.ts",
+    "rca:analyze": "tsx tools/rca/analyze.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
