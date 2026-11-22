@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QA AI Level-3 Architecture</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#151d33; --line:#7aa2f7; --text:#eef3ff; --muted:#b7c2df; --accent:#65d0a9; --danger:#ff7a90; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 18px; border-bottom:1px solid #293552; }
+    h1 { margin:0; font-size:18px; }
+    nav { display:flex; gap:8px; }
+    button { border:1px solid #40527a; border-radius:8px; background:#1a2440; color:var(--text); padding:8px 12px; cursor:pointer; }
+    button:hover, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+    button[aria-selected="true"] { background:#315c91; border-color:#7aa2f7; }
+    main { padding:18px; overflow:auto; }
+    section { min-width:900px; }
+    .diagram { display:grid; gap:20px; }
+    .arch { grid-template-columns: 160px 160px 190px 190px 190px; align-items:center; }
+    .flow { grid-template-columns: 120px 30px 120px 30px 120px 30px 150px 30px 150px; align-items:center; }
+    .flow-failure { grid-template-columns: 1fr; margin-left:810px; width:150px; }
+    .box { border:1px solid #40527a; border-radius:10px; background:var(--panel); padding:12px; min-height:72px; text-align:center; box-shadow:0 8px 22px #0004; }
+    .box strong { display:block; color:#fff; margin-bottom:4px; }
+    .box span { color:var(--muted); font-size:12px; }
+    .trigger { border-color:#d7a65a; } .runner { border-color:#79a8ff; } .target { border-color:#65d0a9; } .rca { border-color:#c6a0ff; } .artifact { border-color:#63c7d0; }
+    .arrow { height:2px; background:var(--line); position:relative; }
+    .arrow::after { content:""; position:absolute; right:-1px; top:-5px; border-left:8px solid var(--line); border-top:6px solid transparent; border-bottom:6px solid transparent; }
+    .decision { width:120px; height:120px; margin:0 auto; display:grid; place-items:center; background:#202a48; border:2px solid #d7a65a; transform:rotate(45deg); border-radius:12px; }
+    .decision > span { transform:rotate(-45deg); font-weight:700; text-align:center; }
+    .branch { display:flex; gap:24px; margin-top:16px; align-items:center; }
+    .yes { color:var(--accent); } .no { color:var(--muted); }
+    .lane { border-left:3px solid #40527a; padding:10px 14px; margin:12px 0; }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QA AI Level-3</h1>
+    <nav aria-label="Diagram views">
+      <button id="architecture-tab" aria-selected="true">Architecture</button>
+      <button id="flow-tab" aria-selected="false">CI flow chart</button>
+    </nav>
+  </header>
+  <main>
+    <section id="architecture-view" aria-label="System architecture diagram">
+      <div class="diagram arch">
+        <div class="box trigger"><strong>GitHub Events</strong><span>Push / Pull Request / Manual</span></div>
+        <div class="arrow"></div>
+        <div class="box runner"><strong>GitHub Actions</strong><span>Ubuntu runner / Node 20</span></div>
+        <div class="arrow"></div>
+        <div class="box target"><strong>Playwright Tests</strong><span>Microsoft Edge / 1 worker</span></div>
+      </div>
+      <div class="lane" style="margin-left:530px;width:380px">
+        <div class="box target"><strong>TypeScript Framework</strong><span>UI Page Objects + API helpers + fixtures</span></div>
+      </div>
+      <div class="diagram arch" style="margin-top:20px">
+        <div class="box target"><strong>Automation Exercise</strong><span>External BASE_URL / UI + API</span></div>
+        <div class="arrow"></div>
+        <div class="box runner"><strong>Playwright Reports</strong><span>HTML / JSON / JUnit / trace / media</span></div>
+        <div class="arrow"></div>
+        <div class="box rca"><strong>Automated RCA</strong><span>Collect + sanitize + analyze</span></div>
+      </div>
+      <div class="diagram arch" style="margin-top:20px">
+        <div></div><div></div>
+        <div class="box artifact"><strong>GitHub Artifacts</strong><span>Reports, diagnostics, retention 14 days</span></div>
+      </div>
+    </section>
+
+    <section id="flow-view" aria-label="CI execution flow chart" hidden>
+      <div class="diagram flow">
+        <div class="box trigger"><strong>Trigger</strong><span>Push / PR / dispatch</span></div><div class="arrow"></div>
+        <div class="box runner"><strong>Checkout</strong><span>actions/checkout@v4</span></div><div class="arrow"></div>
+        <div class="box runner"><strong>Setup</strong><span>Node 20 / npm cache</span></div><div class="arrow"></div>
+        <div class="box runner"><strong>Install</strong><span>npm ci + Edge</span></div><div class="arrow"></div>
+        <div class="box target"><strong>Typecheck</strong><span>npm run typecheck</span></div>
+      </div>
+      <div class="arrow" style="width:2px;height:30px;margin-left:990px"></div>
+      <div class="diagram flow" style="grid-template-columns:120px 30px 150px 30px 120px 30px 150px 30px 150px">
+        <div></div><div></div>
+        <div class="box target"><strong>Playwright suite</strong><span>CI=true / BASE_URL / 1 worker</span></div><div class="arrow"></div>
+        <div class="decision"><span>Did tests<br>fail?</span></div><div class="arrow"></div>
+        <div class="box rca"><strong>RCA pipeline</strong><span>Collect + analyze</span></div><div class="arrow"></div>
+        <div class="box artifact"><strong>RCA artifacts</strong><span>RCA + test-results</span></div>
+      </div>
+      <div class="branch">
+        <span class="yes">YES: collect sanitized evidence, run AI or deterministic fallback, then upload RCA artifacts</span>
+      </div>
+      <div class="diagram flow" style="margin-top:18px">
+        <div></div><div></div>
+        <div></div><div></div>
+        <div class="box artifact"><strong>Always</strong><span>Upload HTML / raw reports</span></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const architecture = document.querySelector('#architecture-view');
+    const flow = document.querySelector('#flow-view');
+    const architectureTab = document.querySelector('#architecture-tab');
+    const flowTab = document.querySelector('#flow-tab');
+    async function show(view) {
+      const isArchitecture = view === 'architecture';
+      architecture.hidden = !isArchitecture;
+      flow.hidden = isArchitecture;
+      architectureTab.setAttribute('aria-selected', String(isArchitecture));
+      flowTab.setAttribute('aria-selected', String(!isArchitecture));
+      await fetch('/view', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({view}) });
+    }
+    architectureTab.addEventListener('click', () => show('architecture'));
+    flowTab.addEventListener('click', () => show('flow'));
+    fetch('/state').then(response => response.json()).then(state => show(state.view)).catch(() => show('architecture'));
+  </script>
+</body>
+</html>
