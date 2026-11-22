@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "initialization": "module",
+  "canvases": [{
+    "id": "qa-ai-level3-architecture",
+    "displayName": "QA AI Level-3 Architecture",
+    "description": "Interactive architecture diagram and CI flow chart for the Playwright QA project.",
+    "actions": [
+      {
+        "name": "show_architecture",
+        "description": "Show the system architecture diagram."
+      },
+      {
+        "name": "show_flow",
+        "description": "Show the GitHub Actions execution flow chart."
+      }
+    ]
+  }]
+}
