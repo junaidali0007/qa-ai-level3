@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint .",
     "format:check": "prettier --check \"**/*.{ts,md,json,yml}\"",
     "test": "playwright test",
     "test:smoke": "playwright test --grep @smoke",
@@ -19,11 +19,14 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@playwright/test": "^1.50.0",
     "@types/node": "^22.0.0",
     "eslint": "^9.0.0",
+    "globals": "^16.5.0",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.73.0"
   }
 }

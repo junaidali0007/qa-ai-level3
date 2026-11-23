@@ -1,20 +1,457 @@
-<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="21.689859999999996">
-<testsuite name="api\catalog-and-auth.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="3" failures="0" skipped="0" time="3.684" errors="0">
-<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-03 @api @negative returns 404 in payload for non-existent login credentials" classname="api\catalog-and-auth.spec.ts" time="1.548">
+<testsuites id="" name="" tests="16" failures="4" skipped="0" errors="4" time="30.088447">
+<testsuite name="api\catalog-and-auth.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="6" failures="0" skipped="0" time="30.038" errors="0">
+<testcase name="Catalog &amp; Accounts API Contracts @api › lists products and validates schema fields" classname="api\catalog-and-auth.spec.ts" time="3.937">
 </testcase>
-<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-04 @api @negative returns 400 in payload when email parameter is omitted from verifyLogin" classname="api\catalog-and-auth.spec.ts" time="0.806">
+<testcase name="Catalog &amp; Accounts API Contracts @api › searches products by keyword and returns matching items" classname="api\catalog-and-auth.spec.ts" time="3.852">
 </testcase>
-<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-05 @api @negative returns 400 in payload when registering with an already existing email" classname="api\catalog-and-auth.spec.ts" time="1.33">
+<testcase name="Catalog &amp; Accounts API Contracts @api › verifies provisioned account credentials via verifyLogin" classname="api\catalog-and-auth.spec.ts" time="7.585">
+</testcase>
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-03 @api @negative returns 404 in payload for non-existent login credentials" classname="api\catalog-and-auth.spec.ts" time="3.46">
+</testcase>
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-04 @api @negative returns 400 in payload when email parameter is omitted from verifyLogin" classname="api\catalog-and-auth.spec.ts" time="3.456">
+</testcase>
+<testcase name="Catalog &amp; Accounts API Contracts @api › AE-API-05 @api @negative returns 400 in payload when registering with an already existing email" classname="api\catalog-and-auth.spec.ts" time="7.748">
 </testcase>
 </testsuite>
-<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="2" failures="0" skipped="0" time="7.406" errors="0">
-<testcase name="Authentication Flow @ui @auth › AE-AUTH-02 @ui @auth @negative shows error message for invalid login credentials" classname="ui\auth\login.spec.ts" time="3.295">
+<testsuite name="ui\ancillary\home-navigation.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="2" failures="1" skipped="0" time="31.254" errors="1">
+<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-01 @smoke @P0 loads home page and verifies primary navigation links" classname="ui\ancillary\home-navigation.spec.ts" time="13.132">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(page).toHaveTitle(expected) failed" type="expect.toHaveTitle">
+<![CDATA[  [Microsoft Edge] › ui\ancillary\home-navigation.spec.ts:5:3 › Home & Ancillary Navigation @ui @ancillary @smoke › AE-01 @smoke @P0 loads home page and verifies primary navigation links 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Automation Exercise/i
+    Received string:  ""
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 10000ms
+        23 × locator resolved to <html>…</html>
+           - unexpected value ""
+
+
+       8 |   }) => {
+       9 |     await gotoAndVerify(page, '/');
+    > 10 |     await expect(page).toHaveTitle(/Automation Exercise/i);
+         |                        ^
+      11 |
+      12 |     await expect(homePage.productsLink).toBeVisible();
+      13 |     await expect(homePage.cartLink).toBeVisible();
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\ancillary\home-navigation.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 </testcase>
-<testcase name="Authentication Flow @ui @auth › AE-AUTH-03 @ui @auth @negative prevents signup when email already exists" classname="ui\auth\login.spec.ts" time="4.111">
+<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-02 @smoke navigates between Products, Cart, and Signup/Login views" classname="ui\ancillary\home-navigation.spec.ts" time="18.122">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<error message="locator.click: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [Microsoft Edge] › ui\ancillary\home-navigation.spec.ts:17:3 › Home & Ancillary Navigation @ui @ancillary @smoke › AE-02 @smoke navigates between Products, Cart, and Signup/Login views 
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: /products/i }).first()
+
+
+       at ..\src\pages\HomePage.ts:15
+
+      13 |
+      14 |   async openProducts(): Promise<void> {
+    > 15 |     await this.productsLink.first().click();
+         |                                     ^
+      16 |   }
+      17 |
+      18 |   async openSignupLogin(): Promise<void> {
+        at HomePage.openProducts (C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\src\pages\HomePage.ts:15:37)
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\ancillary\home-navigation.spec.ts:23:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
 </testcase>
 </testsuite>
-<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-22T06:53:05.034Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="3.797" errors="0">
-<testcase name="Product Catalog Search @ui @catalog › AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query" classname="ui\catalog\product-search.spec.ts" time="3.797">
+<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="3" failures="0" skipped="0" time="55.538" errors="2">
+<testcase name="Authentication Flow @ui @auth › signs in with provisioned account credentials" classname="ui\auth\login.spec.ts" time="24.346">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<error message="locator.fill: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [Microsoft Edge] › ui\auth\login.spec.ts:5:3 › Authentication Flow @ui @auth › signs in with provisioned account credentials 
+
+    TimeoutError: locator.fill: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for locator('input[data-qa="login-email"]')
+
+
+       at ..\src\pages\LoginPage.ts:23
+
+      21 |
+      22 |   async login(email: string, password: string): Promise<void> {
+    > 23 |     await this.loginEmailInput.fill(email);
+         |                                ^
+      24 |     await this.loginPasswordInput.fill(password);
+      25 |     await this.loginButton.click();
+      26 |   }
+        at LoginPage.login (C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\src\pages\LoginPage.ts:23:32)
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\auth\login.spec.ts:16:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="Authentication Flow @ui @auth › AE-AUTH-02 @ui @auth @negative shows error message for invalid login credentials" classname="ui\auth\login.spec.ts" time="18.084">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<error message="locator.click: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [Microsoft Edge] › ui\auth\login.spec.ts:21:3 › Authentication Flow @ui @auth › AE-AUTH-02 @ui @auth @negative shows error message for invalid login credentials 
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: /signup \/ login/i }).first()
+
+
+       at ..\src\pages\HomePage.ts:19
+
+      17 |
+      18 |   async openSignupLogin(): Promise<void> {
+    > 19 |     await this.signupLoginLink.first().click();
+         |                                        ^
+      20 |   }
+      21 |
+      22 |   async openCart(): Promise<void> {
+        at HomePage.openSignupLogin (C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\src\pages\HomePage.ts:19:40)
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\auth\login.spec.ts:27:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="Authentication Flow @ui @auth › AE-AUTH-03 @ui @auth @negative prevents signup when email already exists" classname="ui\auth\login.spec.ts" time="13.108">
+</testcase>
+</testsuite>
+<testsuite name="ui\cart\cart-mutations.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="1" failures="1" skipped="0" time="13.979" errors="0">
+<testcase name="Cart Item Add &amp; Remove @ui @cart › adds a product to cart and removes it" classname="ui\cart\cart-mutations.spec.ts" time="13.979">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toBeGreaterThan(expected)" type="expect.toBeGreaterThan">
+<![CDATA[  [Microsoft Edge] › ui\cart\cart-mutations.spec.ts:5:3 › Cart Item Add & Remove @ui @cart › adds a product to cart and removes it 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      21 |
+      22 |     const initialCount = await cartPage.rowCount();
+    > 23 |     expect(initialCount).toBeGreaterThan(0);
+         |                          ^
+      24 |
+      25 |     await cartPage.removeItemAt(0);
+      26 |     await expect.poll(async () => cartPage.rowCount()).toBe(initialCount - 1);
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\cart\cart-mutations.spec.ts:23:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="2" failures="2" skipped="0" time="37.986" errors="0">
+<testcase name="Product Catalog Search @ui @catalog › searches catalog for matching products" classname="ui\catalog\product-search.spec.ts" time="19.147">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [Microsoft Edge] › ui\catalog\product-search.spec.ts:5:3 › Product Catalog Search @ui @catalog › searches catalog for matching products 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: /searched products/i })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: /searched products/i }) with timeout 10000ms
+      - waiting for getByRole('heading', { name: /searched products/i })
+
+
+      16 |     await productsPage.searchFor(searchTerm);
+      17 |
+    > 18 |     await expect(page.getByRole('heading', { name: /searched products/i })).toBeVisible();
+         |                                                                             ^
+      19 |     await expect(page.locator('.productinfo p').first()).toBeVisible();
+      20 |   });
+      21 |   test('AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query', async ({
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\catalog\product-search.spec.ts:18:77
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query" classname="ui\catalog\product-search.spec.ts" time="18.839">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [Microsoft Edge] › ui\catalog\product-search.spec.ts:21:3 › Product Catalog Search @ui @catalog › AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: /Searched Products/i })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: /Searched Products/i }) with timeout 10000ms
+      - waiting for getByRole('heading', { name: /Searched Products/i })
+
+
+      29 |     await productsPage.searchFor(`ZZZ_NON_EXISTENT_SKU_${Date.now()}`);
+      30 |
+    > 31 |     await expect(page.getByRole('heading', { name: /Searched Products/i })).toBeVisible();
+         |                                                                             ^
+      32 |     await expect(page.locator('.features_items .product-image-wrapper')).toHaveCount(0);
+      33 |   });
+      34 | });
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\catalog\product-search.spec.ts:31:77
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="ui\catalog\smoke-catalogue.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="8.451" errors="0">
+<testcase name="Catalog Smoke @ui @catalog @smoke › loads products catalog and displays product cards" classname="ui\catalog\smoke-catalogue.spec.ts" time="8.451">
+</testcase>
+</testsuite>
+<testsuite name="ui\checkout\authenticated-checkout.spec.ts" timestamp="2026-11-23T14:37:51.015Z" hostname="Microsoft Edge" tests="1" failures="0" skipped="0" time="20.827" errors="1">
+<testcase name="Authenticated Product Search &amp; Checkout Flow @ui › logs in with provisioned account, adds product to cart, and reaches checkout" classname="ui\checkout\authenticated-checkout.spec.ts" time="20.827">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\video.webm]]
+
+[[ATTACHMENT|..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\error-context.md]]
+
+[[ATTACHMENT|..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\trace.zip]]
+]]>
+</system-out>
+<error message="locator.click: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [Microsoft Edge] › ui\checkout\authenticated-checkout.spec.ts:5:3 › Authenticated Product Search & Checkout Flow @ui › logs in with provisioned account, adds product to cart, and reaches checkout 
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: /signup \/ login/i }).first()
+
+
+       at ..\src\pages\HomePage.ts:19
+
+      17 |
+      18 |   async openSignupLogin(): Promise<void> {
+    > 19 |     await this.signupLoginLink.first().click();
+         |                                        ^
+      20 |   }
+      21 |
+      22 |   async openCart(): Promise<void> {
+        at HomePage.openSignupLogin (C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\src\pages\HomePage.ts:19:40)
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\checkout\authenticated-checkout.spec.ts:16:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
 </testcase>
 </testsuite>
 </testsuites>

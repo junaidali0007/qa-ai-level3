@@ -2,7 +2,7 @@ name: Playwright QA & Automated RCA
 
 on:
   push:
-    branches: [main, 'feat/**']
+    branches: [main, "feat/**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -40,6 +40,9 @@ jobs:
       - name: Collect & analyze RCA on failure
         if: failure()
         env:
+          BASE_URL: ${{ vars.BASE_URL || 'https://automationexercise.com' }}
+          AI_PROVIDER: gemini
+          AI_MODEL: gemini-2.5-flash
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
         run: |
           npm run rca:collect
