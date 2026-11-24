@@ -67,7 +67,7 @@ export class ProductDetailsPage {
 }
 
 // @AE-12 @ui @catalog increase quantity on product detail page, add to cart and verify cart page quantity and total price
-async addProductToCartAndVerify(quantity = 3): Promise<void> {
+async addProductToCartAndVerify(p0: string, quantity = 3): Promise<void> {
   await this.expectLoaded();
   await expect(this.price).toBeVisible();
 

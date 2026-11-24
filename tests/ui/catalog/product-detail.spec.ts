@@ -13,7 +13,7 @@ test.describe("Product Detail page @ui @catalog", () => {
       const productDetailsPage = await productsPage.openFirstProductDetails();
 
       await productDetailsPage.verifyProductDetails();
-      await productDetailsPage.addProductToCartAndVerify('1', 3);
+      await productDetailsPage.addProductToCartAndVerify("1", 3);
     },
   );
 });
