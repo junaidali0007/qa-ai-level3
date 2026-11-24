@@ -27,13 +27,13 @@ export default defineConfig({
     actionTimeout: 15_000,
   },
   projects: [
-    /* {
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    }, */
-     {
+    },
+    /*  {
     name: 'Microsoft Edge',
     use: { ...devices['Desktop Edge'], channel: 'msedge' },
-  },
+  }, */
   ],
 });

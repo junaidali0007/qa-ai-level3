@@ -4,7 +4,7 @@
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "--workers=10"
+      "tests/ui/catalog/product-search.spec.ts"
     ],
     "configFile": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\playwright.config.ts",
     "rootDir": "C:/Users/HP/VisualStudioCodeProjects/qa-ai-level3/tests",
@@ -18,7 +18,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 10
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "projects": [
@@ -27,10 +27,10 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 10
+          "actualWorkers": 2
         },
-        "id": "Microsoft Edge",
-        "name": "Microsoft Edge",
+        "id": "chromium",
+        "name": "chromium",
         "testDir": "C:/Users/HP/VisualStudioCodeProjects/qa-ai-level3/tests",
         "testIgnore": [],
         "testMatch": [
@@ -47,9 +47,9 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 10
+          "actualWorkers": 2
         },
-        "name": "Microsoft Edge",
+        "name": "chromium",
         "testDir": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests",
         "snapshotDir": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests",
         "testIgnore": [],
@@ -61,7 +61,7 @@
           "screenshot": "only-on-failure",
           "video": "retain-on-failure",
           "actionTimeout": 15000,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36 Edg/159.0.8154.6",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36",
           "viewport": {
             "width": 1280,
             "height": 720
@@ -73,12 +73,11 @@
           "deviceScaleFactor": 1,
           "isMobile": false,
           "hasTouch": false,
-          "defaultBrowserType": "chromium",
-          "channel": "msedge"
+          "defaultBrowserType": "chromium"
         },
         "dependencies": [],
         "ignoreSnapshots": false,
-        "__projectId": "Microsoft Edge"
+        "__projectId": "chromium"
       }
     ],
     "quiet": false,
@@ -116,758 +115,10 @@
     "updateSnapshots": "default",
     "updateSourceMethod": "patch",
     "version": "1.65.1",
-    "workers": 10,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
-    {
-      "title": "api\\catalog-and-auth.spec.ts",
-      "file": "api/catalog-and-auth.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Catalog & Accounts API Contracts @api",
-          "file": "api/catalog-and-auth.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
-            {
-              "title": "lists products and validates schema fields",
-              "ok": true,
-              "tags": [
-                "api"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3937,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.566Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-17d95934476cad547ce7",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 4,
-              "column": 3
-            },
-            {
-              "title": "searches products by keyword and returns matching items",
-              "ok": true,
-              "tags": [
-                "api"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3852,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.537Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-081d93051f4ee31e69d2",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 17,
-              "column": 3
-            },
-            {
-              "title": "verifies provisioned account credentials via verifyLogin",
-              "ok": true,
-              "tags": [
-                "api"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 7585,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.513Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-c417a8caa991f6d43e2c",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 33,
-              "column": 3
-            },
-            {
-              "title": "AE-API-03 @api @negative returns 404 in payload for non-existent login credentials",
-              "ok": true,
-              "tags": [
-                "api",
-                "api",
-                "negative"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 3460,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.514Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-05c520bd73581ced297c",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 45,
-              "column": 3
-            },
-            {
-              "title": "AE-API-04 @api @negative returns 400 in payload when email parameter is omitted from verifyLogin",
-              "ok": true,
-              "tags": [
-                "api",
-                "api",
-                "negative"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 3456,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.551Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-f2aad698b4d9554b6549",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 57,
-              "column": 1
-            },
-            {
-              "title": "AE-API-05 @api @negative returns 400 in payload when registering with an already existing email",
-              "ok": true,
-              "tags": [
-                "api",
-                "api",
-                "negative"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 5,
-                      "status": "passed",
-                      "duration": 7748,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.560Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c04e2a7e6112401d2857-045e6b95cdd4c0d68bc9",
-              "file": "api/catalog-and-auth.spec.ts",
-              "line": 70,
-              "column": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\ancillary\\home-navigation.spec.ts",
-      "file": "ui/ancillary/home-navigation.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Home & Ancillary Navigation @ui @ancillary @smoke",
-          "file": "ui/ancillary/home-navigation.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
-            {
-              "title": "AE-01 @smoke @P0 loads home page and verifies primary navigation links",
-              "ok": false,
-              "tags": [
-                "ui",
-                "ancillary",
-                "smoke",
-                "smoke",
-                "P0"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 6,
-                      "status": "failed",
-                      "duration": 13132,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Automation Exercise/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Automation Exercise/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts:10:24",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts",
-                          "column": 24,
-                          "line": 10
-                        },
-                        "snippet": " \u001b[90m  8 |\u001b[39m   }) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m gotoAndVerify(page\u001b[33m,\u001b[39m \u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Automation Exercise/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(homePage\u001b[33m.\u001b[39mproductsLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m expect(homePage\u001b[33m.\u001b[39mcartLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts",
-                            "column": 24,
-                            "line": 10
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Automation Exercise/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n \u001b[90m  8 |\u001b[39m   }) \u001b[33m=>\u001b[39m {\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m gotoAndVerify(page\u001b[33m,\u001b[39m \u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Automation Exercise/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(homePage\u001b[33m.\u001b[39mproductsLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m expect(homePage\u001b[33m.\u001b[39mcartLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts:10:24\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.565Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-1905b-es-primary-navigation-links-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts",
-                        "column": 24,
-                        "line": 10
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "a1e19738c0087a8cd88a-ac565af4e5c051afcfbd",
-              "file": "ui/ancillary/home-navigation.spec.ts",
-              "line": 5,
-              "column": 3
-            },
-            {
-              "title": "AE-02 @smoke navigates between Products, Cart, and Signup/Login views",
-              "ok": false,
-              "tags": [
-                "ui",
-                "ancillary",
-                "smoke",
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 7,
-                      "status": "failed",
-                      "duration": 18122,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /products/i }).first()\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /products/i }).first()\u001b[22m\n\n    at HomePage.openProducts (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:15:37)\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts:23:20",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                          "column": 37,
-                          "line": 15
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:15\n\n \u001b[90m 13 |\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36masync\u001b[39m openProducts()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductsLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                            "column": 37,
-                            "line": 15
-                          },
-                          "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /products/i }).first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:15\n\n \u001b[90m 13 |\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36masync\u001b[39m openProducts()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductsLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m   }\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[2m    at HomePage.openProducts (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:15:37)\u001b[22m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\ancillary\\home-navigation.spec.ts:23:20\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.585Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-ancillary-home-navigati-9381b-Cart-and-Signup-Login-views-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                        "column": 37,
-                        "line": 15
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "a1e19738c0087a8cd88a-76e515fe88640da33cd8",
-              "file": "ui/ancillary/home-navigation.spec.ts",
-              "line": 17,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\auth\\login.spec.ts",
-      "file": "ui/auth/login.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Authentication Flow @ui @auth",
-          "file": "ui/auth/login.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
-            {
-              "title": "signs in with provisioned account credentials",
-              "ok": false,
-              "tags": [
-                "ui",
-                "auth"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 8,
-                      "status": "failed",
-                      "duration": 24346,
-                      "error": {
-                        "message": "TimeoutError: locator.fill: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[data-qa=\"login-email\"]')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.fill: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[data-qa=\"login-email\"]')\u001b[22m\n\n    at LoginPage.login (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\LoginPage.ts:23:32)\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\auth\\login.spec.ts:16:21",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\LoginPage.ts",
-                          "column": 32,
-                          "line": 23
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\LoginPage.ts:23\n\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m login(email\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginEmailInput\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginPasswordInput\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m   }"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\LoginPage.ts",
-                            "column": 32,
-                            "line": 23
-                          },
-                          "message": "TimeoutError: locator.fill: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[data-qa=\"login-email\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\LoginPage.ts:23\n\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m login(email\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginEmailInput\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginPasswordInput\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m   }\n\u001b[2m    at LoginPage.login (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\LoginPage.ts:23:32)\u001b[22m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\auth\\login.spec.ts:16:21\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.592Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-70c7f-isioned-account-credentials-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\LoginPage.ts",
-                        "column": 32,
-                        "line": 23
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "a2d96d947731fd09b1cd-daded8ed54bed944c949",
-              "file": "ui/auth/login.spec.ts",
-              "line": 5,
-              "column": 3
-            },
-            {
-              "title": "AE-AUTH-02 @ui @auth @negative shows error message for invalid login credentials",
-              "ok": false,
-              "tags": [
-                "ui",
-                "auth",
-                "ui",
-                "auth",
-                "negative"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 9,
-                      "status": "failed",
-                      "duration": 18084,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n\n    at HomePage.openSignupLogin (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:19:40)\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\auth\\login.spec.ts:27:18",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                          "column": 40,
-                          "line": 19
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:19\n\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignupLoginLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m   }\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m openCart()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                            "column": 40,
-                            "line": 19
-                          },
-                          "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:19\n\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignupLoginLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m   }\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m openCart()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[2m    at HomePage.openSignupLogin (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:19:40)\u001b[22m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\auth\\login.spec.ts:27:18\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:51.636Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-auth-login-Authenticati-4b78f-r-invalid-login-credentials-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                        "column": 40,
-                        "line": 19
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "a2d96d947731fd09b1cd-028c50bb6a2e0475b528",
-              "file": "ui/auth/login.spec.ts",
-              "line": 21,
-              "column": 3
-            },
-            {
-              "title": "AE-AUTH-03 @ui @auth @negative prevents signup when email already exists",
-              "ok": true,
-              "tags": [
-                "ui",
-                "auth",
-                "ui",
-                "auth",
-                "negative"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 13108,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:55.022Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "a2d96d947731fd09b1cd-65a8f5dfcc50934c1757",
-              "file": "ui/auth/login.spec.ts",
-              "line": 35,
-              "column": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\cart\\cart-mutations.spec.ts",
-      "file": "ui/cart/cart-mutations.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Cart Item Add & Remove @ui @cart",
-          "file": "ui/cart/cart-mutations.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
-            {
-              "title": "adds a product to cart and removes it",
-              "ok": false,
-              "tags": [
-                "ui",
-                "cart"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "failed",
-                      "duration": 13979,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\cart\\cart-mutations.spec.ts:23:26",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\cart\\cart-mutations.spec.ts",
-                          "column": 26,
-                          "line": 23
-                        },
-                        "snippet": " \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m initialCount \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mrowCount()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(initialCount)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mremoveItemAt(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m cartPage\u001b[33m.\u001b[39mrowCount())\u001b[33m.\u001b[39mtoBe(initialCount \u001b[33m-\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\cart\\cart-mutations.spec.ts",
-                            "column": 26,
-                            "line": 23
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m initialCount \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mrowCount()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(initialCount)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mremoveItemAt(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m cartPage\u001b[33m.\u001b[39mrowCount())\u001b[33m.\u001b[39mtoBe(initialCount \u001b[33m-\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\cart\\cart-mutations.spec.ts:23:26\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:55.068Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-cart-cart-mutations-Car-370fd-duct-to-cart-and-removes-it-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\cart\\cart-mutations.spec.ts",
-                        "column": 26,
-                        "line": 23
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "023bc626bf7762f06856-fc6b0381b2e666e0004d",
-              "file": "ui/cart/cart-mutations.spec.ts",
-              "line": 5,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
     {
       "title": "ui\\catalog\\product-search.spec.ts",
       "file": "ui/catalog/product-search.spec.ts",
@@ -882,9 +133,12 @@
           "column": 6,
           "specs": [
             {
-              "title": "searches catalog for matching products",
-              "ok": false,
+              "title": "@AE-07 @ui @catalog searches catalog for matching products",
+              "ok": true,
               "tags": [
+                "ui",
+                "catalog",
+                "AE-07",
                 "ui",
                 "catalog"
               ],
@@ -893,82 +147,38 @@
                   "timeout": 50000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 19147,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /searched products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /searched products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /searched products/i })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /searched products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /searched products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /searched products/i })\u001b[22m\n\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts:18:77",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                          "column": 77,
-                          "line": 18
-                        },
-                        "snippet": " \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m productsPage\u001b[33m.\u001b[39msearchFor(searchTerm)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/searched products/i\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.productinfo p'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m   test(\u001b[32m'AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                            "column": 77,
-                            "line": 18
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /searched products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /searched products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /searched products/i })\u001b[22m\n\n\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m productsPage\u001b[33m.\u001b[39msearchFor(searchTerm)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/searched products/i\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.productinfo p'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m   test(\u001b[32m'AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts:18:77\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6370,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-23T14:37:55.461Z",
+                      "startTime": "2026-11-24T07:37:07.981Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--049df-talog-for-matching-products-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                        "column": 77,
-                        "line": 18
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "05ba70852db50f7beeed-865621f595b1ca970fa3",
+              "id": "05ba70852db50f7beeed-f375b494ed930b2dbde6",
               "file": "ui/catalog/product-search.spec.ts",
               "line": 5,
               "column": 3
             },
             {
-              "title": "AE-CAT-03 @ui @catalog @negative displays zero product cards for unmatched search query",
-              "ok": false,
+              "title": "@AE-08 @ui @catalog @negative displays zero product cards for unmatched search query",
+              "ok": true,
               "tags": [
                 "ui",
                 "catalog",
+                "AE-08",
                 "ui",
                 "catalog",
                 "negative"
@@ -978,119 +188,19 @@
                   "timeout": 50000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 18839,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Searched Products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /Searched Products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Searched Products/i })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Searched Products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /Searched Products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Searched Products/i })\u001b[22m\n\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts:31:77",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                          "column": 77,
-                          "line": 31
-                        },
-                        "snippet": " \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m productsPage\u001b[33m.\u001b[39msearchFor(\u001b[32m`ZZZ_NON_EXISTENT_SKU_${Date.now()}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/Searched Products/i\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.features_items .product-image-wrapper'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m })\u001b[33m;\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                            "column": 77,
-                            "line": 31
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Searched Products/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: /Searched Products/i }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Searched Products/i })\u001b[22m\n\n\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m productsPage\u001b[33m.\u001b[39msearchFor(\u001b[32m`ZZZ_NON_EXISTENT_SKU_${Date.now()}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/Searched Products/i\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.features_items .product-image-wrapper'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts:31:77\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-11-23T14:37:55.583Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-catalog-product-search--3355c--for-unmatched-search-query-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\catalog\\product-search.spec.ts",
-                        "column": 77,
-                        "line": 31
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "05ba70852db50f7beeed-3d942692f6dcc8a32ade",
-              "file": "ui/catalog/product-search.spec.ts",
-              "line": 21,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\catalog\\smoke-catalogue.spec.ts",
-      "file": "ui/catalog/smoke-catalogue.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Catalog Smoke @ui @catalog @smoke",
-          "file": "ui/catalog/smoke-catalogue.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
-            {
-              "title": "loads products catalog and displays product cards",
-              "ok": true,
-              "tags": [
-                "ui",
-                "catalog",
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 50000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8451,
+                      "duration": 6373,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-23T14:37:59.156Z",
+                      "startTime": "2026-11-24T07:37:07.979Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1098,108 +208,90 @@
                   "status": "expected"
                 }
               ],
-              "id": "4c1e0b130f4048e2b4c7-3f2c01d4a1d2ed7e515a",
-              "file": "ui/catalog/smoke-catalogue.spec.ts",
-              "line": 5,
+              "id": "05ba70852db50f7beeed-c28f4f510b364b14cbc3",
+              "file": "ui/catalog/product-search.spec.ts",
+              "line": 21,
               "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\checkout\\authenticated-checkout.spec.ts",
-      "file": "ui/checkout/authenticated-checkout.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Authenticated Product Search & Checkout Flow @ui",
-          "file": "ui/checkout/authenticated-checkout.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
+            },
             {
-              "title": "logs in with provisioned account, adds product to cart, and reaches checkout",
-              "ok": false,
+              "title": "@AE-06 @ui @catalog verifies all products and a product detail page",
+              "ok": true,
               "tags": [
-                "ui"
+                "ui",
+                "catalog",
+                "AE-06",
+                "ui",
+                "catalog"
               ],
               "tests": [
                 {
                   "timeout": 50000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 5,
-                      "status": "failed",
-                      "duration": 20827,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n\n    at HomePage.openSignupLogin (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:19:40)\n    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\checkout\\authenticated-checkout.spec.ts:16:20",
-                        "location": {
-                          "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                          "column": 40,
-                          "line": 19
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:19\n\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignupLoginLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m   }\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m openCart()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                            "column": 40,
-                            "line": 19
-                          },
-                          "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /signup \\/ login/i }).first()\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\HomePage.ts:19\n\n \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m   \u001b[36masync\u001b[39m openSignupLogin()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignupLoginLink\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m   }\n \u001b[90m 21 |\u001b[39m\n \u001b[90m 22 |\u001b[39m   \u001b[36masync\u001b[39m openCart()\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n\u001b[2m    at HomePage.openSignupLogin (C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts:19:40)\u001b[22m\n\u001b[2m    at C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\tests\\ui\\checkout\\authenticated-checkout.spec.ts:16:20\u001b[22m"
-                        }
-                      ],
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4259,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-23T14:37:59.411Z",
+                      "startTime": "2026-11-24T07:37:14.455Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\test-results\\ui-checkout-authenticated--dec84-o-cart-and-reaches-checkout-Microsoft-Edge\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\HP\\VisualStudioCodeProjects\\qa-ai-level3\\src\\pages\\HomePage.ts",
-                        "column": 40,
-                        "line": 19
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "f67170373fe8732c3add-6522d265de7a99f2028a",
-              "file": "ui/checkout/authenticated-checkout.spec.ts",
-              "line": 5,
+              "id": "05ba70852db50f7beeed-8420670a54e435dd338d",
+              "file": "ui/catalog/product-search.spec.ts",
+              "line": 34,
               "column": 3
+            },
+            {
+              "title": "@AE-09 @ui @catalog displays products for selected categories",
+              "ok": true,
+              "tags": [
+                "ui",
+                "catalog",
+                "AE-09",
+                "ui",
+                "catalog"
+              ],
+              "tests": [
+                {
+                  "timeout": 50000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7637,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-24T07:37:14.456Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "05ba70852db50f7beeed-e8c485052de75e280bfa",
+              "file": "ui/catalog/product-search.spec.ts",
+              "line": 62,
+              "column": 1
             }
           ]
         }
@@ -1208,11 +300,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-23T14:37:50.855Z",
-    "duration": 30088.447,
-    "expected": 8,
+    "startTime": "2026-11-24T07:37:07.526Z",
+    "duration": 14657.61,
+    "expected": 4,
     "skipped": 0,
-    "unexpected": 8,
+    "unexpected": 0,
     "flaky": 0
   }
 }
