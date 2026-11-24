@@ -1,4 +1,5 @@
 import { expect, type Locator, type Page } from "@playwright/test";
+import { ProductDetailsPage } from "./ProductDetailsPage.js";
 
 export class ProductsPage {
   readonly searchInput: Locator;
@@ -70,6 +71,12 @@ export class ProductsPage {
     this.categoryProductsHeading = page.locator(".features_items h2.title");
   }
 
+  private parseCurrencyAmount(rawText: string): number {
+    const numericValue = Number(rawText.replace(/[^\d.]/g, "").trim());
+    expect(Number.isFinite(numericValue)).toBe(true);
+    return numericValue;
+  }
+
   async searchFor(query: string): Promise<void> {
     await this.searchInput.fill(query);
     await this.searchButton.click();
@@ -93,6 +100,32 @@ export class ProductsPage {
         .waitFor({ state: "hidden", timeout: timeoutMs })
         .catch(() => {});
     }
+  }
+
+  async openFirstProductDetails(): Promise<ProductDetailsPage> {
+    await expect(this.allProductsHeading).toBeVisible();
+    await expect(this.firstProductCard).toBeVisible();
+    await this.firstProductCard.scrollIntoViewIfNeeded();
+    await this.firstProductViewLink.click();
+
+    const productDetailsPage = new ProductDetailsPage(this.page);
+    await productDetailsPage.expectLoaded();
+    return productDetailsPage;
+  }
+
+  async viewProductDetails(productId: number): Promise<ProductDetailsPage> {
+    const productCard = this.page
+      .locator(
+        `.features_items .product-image-wrapper:has(.add-to-cart[data-product-id="${productId}"])`,
+      )
+      .first();
+    await expect(productCard).toBeVisible();
+    await productCard.scrollIntoViewIfNeeded();
+    await productCard.getByRole("link", { name: /view product/i }).click();
+
+    const productDetailsPage = new ProductDetailsPage(this.page);
+    await productDetailsPage.expectLoaded();
+    return productDetailsPage;
   }
 
   async verifyAllProductsAndProductDetailPage(): Promise<void> {
@@ -125,4 +158,92 @@ export class ProductsPage {
       /MEN\s*-\s*JEANS PRODUCTS/i,
     );
   }
+
+  // @AE-10 @ui @catalog verify products for selected brands
+  async verifyProductsForSelectedBrands(): Promise<void> {
+    const brandsSidebar = this.page.locator(".brands-name");
+    await brandsSidebar.locator('a[href="/brand_products/Polo"]').click();
+    await expect(this.categoryProductsHeading).toHaveText(
+      /BRAND\s*-\s*POLO PRODUCTS/i,
+    );
+
+    await brandsSidebar.locator('a[href="/brand_products/H&M"]').click();
+    await expect(this.categoryProductsHeading).toHaveText(
+      /BRAND\s*-\s*H&M PRODUCTS/i,
+    );
+  }
+
+  // @AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart
+  async addMultipleProductsToCartAndVerifyInCart(
+    productIds: number[],
+  ): Promise<void> {
+    expect(productIds).toHaveLength(2);
+
+    await this.page.goto("http://automationexercise.com");
+    await expect(this.page.locator("#slider")).toBeVisible();
+    await this.page.getByRole("link", { name: "Products", exact: true }).click();
+    await expect(this.allProductsHeading).toBeVisible();
+
+    const modalContent = this.page.locator(".modal-content");
+
+    const firstProductCard = this.page.locator(
+      `.features_items .product-image-wrapper:has(.add-to-cart[data-product-id="${productIds[0]}"])`,
+    );
+    await firstProductCard.scrollIntoViewIfNeeded();
+    await firstProductCard.hover();
+    await this.addToCartButtonForProductId(productIds[0]).click();
+    await expect(modalContent).toBeVisible();
+    await this.clickContinueShoppingIfVisible();
+    await expect(modalContent).toBeHidden();
+
+    const secondProductCard = this.page.locator(
+      `.features_items .product-image-wrapper:has(.add-to-cart[data-product-id="${productIds[1]}"])`,
+    );
+    await secondProductCard.scrollIntoViewIfNeeded();
+    await secondProductCard.hover();
+    await this.addToCartButtonForProductId(productIds[1]).click();
+    await expect(modalContent).toBeVisible();
+    await modalContent.getByRole("link", { name: /view cart/i }).click();
+
+    await expect(this.page).toHaveURL(/\/view_cart/);
+
+    const cartRows = this.page.locator(
+      "#cart_info_table tbody tr[id^='product-']",
+    );
+    await expect(cartRows).toHaveCount(2);
+
+    for (const productId of productIds) {
+      const cartRow = this.page.locator(`#product-${productId}`);
+      await expect(cartRow).toBeVisible();
+
+      const price = this.parseCurrencyAmount(
+        await cartRow.locator(".cart_price").innerText(),
+      );
+      const quantityText = (
+        await cartRow.locator(".cart_quantity button").innerText()
+      ).trim();
+      const quantity = Number(quantityText);
+      const total = this.parseCurrencyAmount(
+        await cartRow.locator(".cart_total").innerText(),
+      );
+
+      expect(price).toBeGreaterThan(0);
+      expect(quantity).toBe(1);
+      expect(total).toBe(price * quantity);
+    }
+  }
+  // @AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart, add products one by one and verify added products in the cart after last product is added
+async addMultipleProductsToCartAndVerify(productIds: number[]): Promise<void> {
+
+for (const productId of productIds) {
+
+const addToCartButton = this.addToCartButtonForProductId(productId);
+
+await addToCartButton.click();
+
+await this.clickContinueShoppingIfVisible();
+
+}
+
+}
 }

@@ -2,7 +2,7 @@ import { test, expect } from '../../../src/fixtures/testFixtures.js';
 import { assertNoInterstitialBlock, gotoAndVerify } from '../../../src/utils/navigation.js';
 
 test.describe('Cart Item Add & Remove @ui @cart', () => {
-  test('adds a product to cart and removes it', async ({
+  test('@AE-13 @UI @cart adds a product to cart and removes it', async ({
     page,
     homePage,
     productsPage,

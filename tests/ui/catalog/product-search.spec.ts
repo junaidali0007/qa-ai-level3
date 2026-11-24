@@ -42,27 +42,32 @@ test.describe('Product Catalog Search @ui @catalog', () => {
     await productsPage.verifyAllProductsAndProductDetailPage();
   });
 
-  /* test('@AE-09 @ui @catalog displays products for selected categories', async ({ page }) => {
-    await gotoAndVerify(page, '/');
-
-    const categories = page.locator('.left-sidebar .category-products');
-    await expect(categories).toBeVisible();
-    await expect(categories.getByText('Category', { exact: true })).toBeVisible();
-
-    await categories.getByRole('link', { name: 'Women', exact: true }).click();
-    await categories.getByRole('link', { name: 'Tops', exact: true }).click();
-    await expect(page.getByRole('heading', { name: /WOMEN\s*-\s*TOPS PRODUCTS/i })).toBeVisible();
-
-    await categories.getByRole('link', { name: 'Men', exact: true }).click();
-    await categories.getByRole('link', { name: 'Jeans', exact: true }).click();
-    await expect(page.getByRole('heading', { name: /MEN\s*-\s*JEANS PRODUCTS/i })).toBeVisible();
-  }); */
-
   //@AE-09 @ui @catalog displays products for selected categories
-test('@AE-09 @ui @catalog displays products for selected categories', async ({ page, homePage, productsPage }) => {
-  await gotoAndVerify(page, '/');
-  await homePage.openProducts();
-  await assertNoInterstitialBlock(page);
-  await productsPage.verifyProductsForSelectedCategories();
-   });
+  test('@AE-09 @ui @catalog displays products for selected categories', async ({ page, homePage, productsPage }) => {
+    await gotoAndVerify(page, '/');
+    await homePage.openProducts();
+    await assertNoInterstitialBlock(page);
+    await productsPage.verifyProductsForSelectedCategories();
+  });
+
+  //@AE-10 @ui @catalog displays products for selected brands
+  test('@AE-10 @ui @catalog displays products for selected brands', async ({ page, homePage, productsPage }) => {
+    await gotoAndVerify(page, '/');
+    await homePage.openProducts();
+    await assertNoInterstitialBlock(page);
+    await productsPage.verifyProductsForSelectedBrands();
+  });
+  //@AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart
+  test('@AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart',
+    async ({ page, homePage, productsPage, cartPage }) => {
+      await gotoAndVerify(page, '/');
+      await homePage.openProducts();
+      await assertNoInterstitialBlock(page);
+      await productsPage.addMultipleProductsToCartAndVerify([1, 2]);
+      await assertNoInterstitialBlock(page);
+      await homePage.openCart();
+      expect(await cartPage.rowCount()).toBe(2);
+    });
+  //@AE-12 @ui @catallog click on first product using view product link, increase quantity on product_detail page, add to cart and verify the product quantity in the cart
+
 });
