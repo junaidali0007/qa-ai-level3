@@ -38,7 +38,8 @@ export class AccountsApiClient {
         }
     }
 
-    async createAccount(account: TestAccountInput): Promise<{ responseCode: number; message: string }> {
+    async createAccount(account: TestAccountInput): Promise<{ responseCode: number; message: string }> 
+    {
         const formBody = new URLSearchParams({
             name: account.name,
             email: account.email,

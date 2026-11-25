@@ -26,6 +26,28 @@ test.describe('Accounts & Auth API Contracts @api', () => {
     expect(result.message).toMatch(/User not found!/i);
   });
 
+  test('@AE-01 creates a new account and verifies its credentials', async ({
+    accountsApi,
+    provisionedAccount,
+  }) => {
+    const newAccount = {
+      ...provisionedAccount,
+      name: 'New API User',
+      email: `new_api_user_${Date.now()}@example.com`,
+    };
+
+    const createResult = await accountsApi.createAccount(newAccount);
+    expect(createResult.responseCode).toBe(201);
+    expect(createResult.message).toMatch(/user created!/i);
+
+    const loginResult = await accountsApi.verifyLogin(
+      newAccount.email,
+      newAccount.password,
+    );
+    expect(loginResult.responseCode).toBe(200);
+    expect(loginResult.message.toLowerCase()).toContain('user exists');
+  });
+
   test('@AE-03 @negative returns 400 in payload when email parameter is omitted from verifyLogin', async ({
     request,
   }) => {
@@ -39,7 +61,7 @@ test.describe('Accounts & Auth API Contracts @api', () => {
     expect(body.message).toMatch(/email or password parameter is missing/i);
   });
 
-  test('@AE-03 @negative returns 400 in payload when registering with an already existing email', async ({
+  test('@AE-05 @negative returns 400 in payload when registering with an already existing email', async ({
     accountsApi,
     provisionedAccount,
   }) => {
@@ -50,5 +72,15 @@ test.describe('Accounts & Auth API Contracts @api', () => {
 
     expect(duplicateResponse.responseCode).toBe(400);
     expect(duplicateResponse.message).toMatch(/Email already exists!/i);
+  });
+  //@AE-22 @api get user account details by email
+  test('@AE-22 @api get user account details by email', async ({ request, provisionedAccount }) => {
+    const response = await request.get('/api/getUserDetailByEmail', {
+      params: { email: provisionedAccount.email },
+    });
+    expect(response.ok()).toBeTruthy();
+    const body = await response.json();
+    expect(body.responseCode).toBe(200);
+    expect(body.user).toBeDefined();
   });
 });
