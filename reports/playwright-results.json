@@ -150,12 +150,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3515,
+                      "duration": 2822,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:16.033Z",
+                      "startTime": "2026-11-25T13:55:22.011Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -188,12 +188,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2155,
+                      "duration": 1660,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:16.036Z",
+                      "startTime": "2026-11-25T13:55:21.992Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -226,12 +226,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 838,
+                      "duration": 1063,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:18.223Z",
+                      "startTime": "2026-11-25T13:55:23.679Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -264,12 +264,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1615,
+                      "duration": 2261,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:19.070Z",
+                      "startTime": "2026-11-25T13:55:24.752Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -317,12 +317,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 483,
+                      "duration": 930,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:19.584Z",
+                      "startTime": "2026-11-25T13:55:24.867Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -353,12 +353,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 545,
+                      "duration": 626,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:20.076Z",
+                      "startTime": "2026-11-25T13:55:25.806Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -410,12 +410,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2283,
+                      "duration": 2305,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:20.648Z",
+                      "startTime": "2026-11-25T13:55:26.454Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -449,12 +449,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3791,
+                      "duration": 4529,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:20.700Z",
+                      "startTime": "2026-11-25T13:55:27.036Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -504,12 +504,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6251,
+                      "duration": 6657,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:23.025Z",
+                      "startTime": "2026-11-25T13:55:28.850Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -544,12 +544,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3742,
+                      "duration": 3485,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:24.593Z",
+                      "startTime": "2026-11-25T13:55:31.661Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -585,12 +585,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4756,
+                      "duration": 6562,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:28.344Z",
+                      "startTime": "2026-11-25T13:55:35.157Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -625,12 +625,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6464,
+                      "duration": 9933,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:29.288Z",
+                      "startTime": "2026-11-25T13:55:35.519Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -682,12 +682,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5107,
+                      "duration": 5277,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:33.120Z",
+                      "startTime": "2026-11-25T13:55:41.738Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -739,12 +739,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4312,
+                      "duration": 4657,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:35.780Z",
+                      "startTime": "2026-11-25T13:55:45.483Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -766,7 +766,70 @@
       "file": "ui/catalog/product-search.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
+      "specs": [
+        {
+          "title": "@AE-14 Search product, Add to Cart, verify products in cart, login and verify products should remain in cart @ui @catalog",
+          "ok": true,
+          "tags": [
+            "AE-14",
+            "ui",
+            "catalog"
+          ],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10108,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigate to products page",
+                      "duration": 3018
+                    },
+                    {
+                      "title": "Search for a product and add to cart",
+                      "duration": 1626
+                    },
+                    {
+                      "title": "Verify product is in cart",
+                      "duration": 627
+                    },
+                    {
+                      "title": "Login and verify product remains in cart",
+                      "duration": 2959,
+                      "steps": [
+                        {
+                          "title": "Verify product is still in cart after login",
+                          "duration": 821
+                        }
+                      ]
+                    }
+                  ],
+                  "startTime": "2026-11-25T13:55:58.663Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05ba70852db50f7beeed-8edca3ff4ab48406741e",
+          "file": "ui/catalog/product-search.spec.ts",
+          "line": 75,
+          "column": 1
+        }
+      ],
       "suites": [
         {
           "title": "Product Catalog Search @ui @catalog",
@@ -796,12 +859,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3420,
+                      "duration": 3680,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:38.241Z",
+                      "startTime": "2026-11-25T13:55:47.036Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -837,12 +900,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3804,
+                      "duration": 3672,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:40.109Z",
+                      "startTime": "2026-11-25T13:55:50.165Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -877,12 +940,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3611,
+                      "duration": 3640,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:41.672Z",
+                      "startTime": "2026-11-25T13:55:50.727Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -917,12 +980,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5092,
+                      "duration": 4443,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:43.923Z",
+                      "startTime": "2026-11-25T13:55:53.848Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -957,12 +1020,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4245,
+                      "duration": 4275,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:45.293Z",
+                      "startTime": "2026-11-25T13:55:54.377Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -997,12 +1060,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5533,
+                      "duration": 5581,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:49.025Z",
+                      "startTime": "2026-11-25T13:55:58.301Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1049,15 +1112,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3244,
+                      "duration": 3150,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:49.558Z",
+                      "startTime": "2026-11-25T13:56:03.900Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1082,16 +1145,18 @@
       "specs": [],
       "suites": [
         {
-          "title": "Authenticated Product Search & Checkout Flow @ui",
+          "title": "E2E flow of customer purchase journey @ui @catalog @checkout",
           "file": "ui/checkout/authenticated-checkout.spec.ts",
-          "line": 4,
+          "line": 8,
           "column": 6,
           "specs": [
             {
               "title": "logs in with provisioned account, adds product to cart, and reaches checkout",
               "ok": true,
               "tags": [
-                "ui"
+                "ui",
+                "catalog",
+                "checkout"
               ],
               "tests": [
                 {
@@ -1102,15 +1167,37 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10777,
+                      "duration": 14497,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-24T17:13:52.821Z",
+                      "steps": [
+                        {
+                          "title": "Log in with provisioned account",
+                          "duration": 5022
+                        },
+                        {
+                          "title": "Search product, add to cart, and verify cart contents",
+                          "duration": 3170
+                        },
+                        {
+                          "title": "Proceed to checkout, verify address details, and place order",
+                          "duration": 1297
+                        },
+                        {
+                          "title": "Enter payment details and confirm order",
+                          "duration": 2142
+                        },
+                        {
+                          "title": "Verify order confirmation and download invoice",
+                          "duration": 641
+                        }
+                      ],
+                      "startTime": "2026-11-25T13:56:07.068Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1118,9 +1205,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "f67170373fe8732c3add-9a79e5caeb77b9cfbc6a",
+              "id": "f67170373fe8732c3add-bb53c191fa7ec2df576b",
               "file": "ui/checkout/authenticated-checkout.spec.ts",
-              "line": 5,
+              "line": 9,
               "column": 3
             }
           ]
@@ -1130,9 +1217,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-24T17:13:15.445Z",
-    "duration": 48283.56,
-    "expected": 22,
+    "startTime": "2026-11-25T13:55:21.404Z",
+    "duration": 60304.166,
+    "expected": 23,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

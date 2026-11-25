@@ -1,64 +1,66 @@
-<testsuites id="" name="" tests="22" failures="0" skipped="0" errors="0" time="48.283559999999994">
-<testsuite name="api\auth.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="4" failures="0" skipped="0" time="8.123" errors="0">
-<testcase name="Accounts &amp; Auth API Contracts @api › @AE-02 verifies provisioned account credentials via verifyLogin" classname="api\auth.spec.ts" time="3.515">
+<testsuites id="" name="" tests="23" failures="0" skipped="0" errors="0" time="60.304165999999995">
+<testsuite name="api\auth.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="4" failures="0" skipped="0" time="7.806" errors="0">
+<testcase name="Accounts &amp; Auth API Contracts @api › @AE-02 verifies provisioned account credentials via verifyLogin" classname="api\auth.spec.ts" time="2.822">
 </testcase>
-<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 404 in payload for non-existent login credentials" classname="api\auth.spec.ts" time="2.155">
+<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 404 in payload for non-existent login credentials" classname="api\auth.spec.ts" time="1.66">
 </testcase>
-<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 400 in payload when email parameter is omitted from verifyLogin" classname="api\auth.spec.ts" time="0.838">
+<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 400 in payload when email parameter is omitted from verifyLogin" classname="api\auth.spec.ts" time="1.063">
 </testcase>
-<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 400 in payload when registering with an already existing email" classname="api\auth.spec.ts" time="1.615">
-</testcase>
-</testsuite>
-<testsuite name="api\catalog.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="2" failures="0" skipped="0" time="1.028" errors="0">
-<testcase name="Catalog API Contracts @api › lists products and validates schema fields" classname="api\catalog.spec.ts" time="0.483">
-</testcase>
-<testcase name="Catalog API Contracts @api › searches products by keyword and returns matching items" classname="api\catalog.spec.ts" time="0.545">
+<testcase name="Accounts &amp; Auth API Contracts @api › @AE-03 @negative returns 400 in payload when registering with an already existing email" classname="api\auth.spec.ts" time="2.261">
 </testcase>
 </testsuite>
-<testsuite name="ui\ancillary\home-navigation.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.074" errors="0">
-<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-01 @smoke @P0 loads home page and verifies primary navigation links" classname="ui\ancillary\home-navigation.spec.ts" time="2.283">
+<testsuite name="api\catalog.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="2" failures="0" skipped="0" time="1.556" errors="0">
+<testcase name="Catalog API Contracts @api › lists products and validates schema fields" classname="api\catalog.spec.ts" time="0.93">
 </testcase>
-<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-02 @smoke navigates between Products, Cart, and Signup/Login views" classname="ui\ancillary\home-navigation.spec.ts" time="3.791">
-</testcase>
-</testsuite>
-<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="4" failures="0" skipped="0" time="21.213" errors="0">
-<testcase name="Authentication Flow @ui @auth › @AE-02 signs in with provisioned account credentials" classname="ui\auth\login.spec.ts" time="6.251">
-</testcase>
-<testcase name="Authentication Flow @ui @auth › AE-02 @ui @auth @negative shows error message for invalid login credentials" classname="ui\auth\login.spec.ts" time="3.742">
-</testcase>
-<testcase name="Authentication Flow @ui @auth › @AE-04 @ui @auth @negative prevents signup when email already exists" classname="ui\auth\login.spec.ts" time="4.756">
-</testcase>
-<testcase name="Authentication Flow @ui @auth › @AE-02 @ui @auth signs out the provisioned account" classname="ui\auth\login.spec.ts" time="6.464">
+<testcase name="Catalog API Contracts @api › searches products by keyword and returns matching items" classname="api\catalog.spec.ts" time="0.626">
 </testcase>
 </testsuite>
-<testsuite name="ui\cart\cart-mutations.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.107" errors="0">
-<testcase name="Cart Item Add &amp; Remove @ui @cart › @AE-13 @UI @cart adds a product to cart and removes it" classname="ui\cart\cart-mutations.spec.ts" time="5.107">
+<testsuite name="ui\ancillary\home-navigation.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.834" errors="0">
+<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-01 @smoke @P0 loads home page and verifies primary navigation links" classname="ui\ancillary\home-navigation.spec.ts" time="2.305">
+</testcase>
+<testcase name="Home &amp; Ancillary Navigation @ui @ancillary @smoke › AE-02 @smoke navigates between Products, Cart, and Signup/Login views" classname="ui\ancillary\home-navigation.spec.ts" time="4.529">
 </testcase>
 </testsuite>
-<testsuite name="ui\catalog\product-detail.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.312" errors="0">
-<testcase name="Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total" classname="ui\catalog\product-detail.spec.ts" time="4.312">
+<testsuite name="ui\auth\login.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="4" failures="0" skipped="0" time="26.637" errors="0">
+<testcase name="Authentication Flow @ui @auth › @AE-02 signs in with provisioned account credentials" classname="ui\auth\login.spec.ts" time="6.657">
+</testcase>
+<testcase name="Authentication Flow @ui @auth › AE-02 @ui @auth @negative shows error message for invalid login credentials" classname="ui\auth\login.spec.ts" time="3.485">
+</testcase>
+<testcase name="Authentication Flow @ui @auth › @AE-04 @ui @auth @negative prevents signup when email already exists" classname="ui\auth\login.spec.ts" time="6.562">
+</testcase>
+<testcase name="Authentication Flow @ui @auth › @AE-02 @ui @auth signs out the provisioned account" classname="ui\auth\login.spec.ts" time="9.933">
 </testcase>
 </testsuite>
-<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="6" failures="0" skipped="0" time="25.705" errors="0">
-<testcase name="Product Catalog Search @ui @catalog › @AE-07 @ui @catalog searches catalog for matching products" classname="ui\catalog\product-search.spec.ts" time="3.42">
-</testcase>
-<testcase name="Product Catalog Search @ui @catalog › @AE-08 @ui @catalog @negative displays zero product cards for unmatched search query" classname="ui\catalog\product-search.spec.ts" time="3.804">
-</testcase>
-<testcase name="Product Catalog Search @ui @catalog › @AE-06 @ui @catalog verifies all products and a product detail page" classname="ui\catalog\product-search.spec.ts" time="3.611">
-</testcase>
-<testcase name="Product Catalog Search @ui @catalog › @AE-09 @ui @catalog displays products for selected categories" classname="ui\catalog\product-search.spec.ts" time="5.092">
-</testcase>
-<testcase name="Product Catalog Search @ui @catalog › @AE-10 @ui @catalog displays products for selected brands" classname="ui\catalog\product-search.spec.ts" time="4.245">
-</testcase>
-<testcase name="Product Catalog Search @ui @catalog › @AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart" classname="ui\catalog\product-search.spec.ts" time="5.533">
+<testsuite name="ui\cart\cart-mutations.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.277" errors="0">
+<testcase name="Cart Item Add &amp; Remove @ui @cart › @AE-13 @UI @cart adds a product to cart and removes it" classname="ui\cart\cart-mutations.spec.ts" time="5.277">
 </testcase>
 </testsuite>
-<testsuite name="ui\catalog\smoke-catalogue.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.244" errors="0">
-<testcase name="Catalog Smoke @ui @catalog @smoke › loads products catalog and displays product cards" classname="ui\catalog\smoke-catalogue.spec.ts" time="3.244">
+<testsuite name="ui\catalog\product-detail.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.657" errors="0">
+<testcase name="Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total" classname="ui\catalog\product-detail.spec.ts" time="4.657">
 </testcase>
 </testsuite>
-<testsuite name="ui\checkout\authenticated-checkout.spec.ts" timestamp="2026-11-24T17:13:15.694Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.777" errors="0">
-<testcase name="Authenticated Product Search &amp; Checkout Flow @ui › logs in with provisioned account, adds product to cart, and reaches checkout" classname="ui\checkout\authenticated-checkout.spec.ts" time="10.777">
+<testsuite name="ui\catalog\product-search.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="7" failures="0" skipped="0" time="35.399" errors="0">
+<testcase name="Product Catalog Search @ui @catalog › @AE-07 @ui @catalog searches catalog for matching products" classname="ui\catalog\product-search.spec.ts" time="3.68">
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › @AE-08 @ui @catalog @negative displays zero product cards for unmatched search query" classname="ui\catalog\product-search.spec.ts" time="3.672">
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › @AE-06 @ui @catalog verifies all products and a product detail page" classname="ui\catalog\product-search.spec.ts" time="3.64">
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › @AE-09 @ui @catalog displays products for selected categories" classname="ui\catalog\product-search.spec.ts" time="4.443">
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › @AE-10 @ui @catalog displays products for selected brands" classname="ui\catalog\product-search.spec.ts" time="4.275">
+</testcase>
+<testcase name="Product Catalog Search @ui @catalog › @AE-11 @ui @catalog add multiple products to cart and verify both products are in the cart" classname="ui\catalog\product-search.spec.ts" time="5.581">
+</testcase>
+<testcase name="@AE-14 Search product, Add to Cart, verify products in cart, login and verify products should remain in cart @ui @catalog" classname="ui\catalog\product-search.spec.ts" time="10.108">
+</testcase>
+</testsuite>
+<testsuite name="ui\catalog\smoke-catalogue.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.15" errors="0">
+<testcase name="Catalog Smoke @ui @catalog @smoke › loads products catalog and displays product cards" classname="ui\catalog\smoke-catalogue.spec.ts" time="3.15">
+</testcase>
+</testsuite>
+<testsuite name="ui\checkout\authenticated-checkout.spec.ts" timestamp="2026-11-25T13:55:21.651Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.497" errors="0">
+<testcase name="E2E flow of customer purchase journey @ui @catalog @checkout › logs in with provisioned account, adds product to cart, and reaches checkout" classname="ui\checkout\authenticated-checkout.spec.ts" time="14.497">
 </testcase>
 </testsuite>
 </testsuites>

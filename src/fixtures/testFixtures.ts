@@ -7,6 +7,8 @@ import { HomePage } from '../pages/HomePage.js';
 import { LoginPage } from '../pages/LoginPage.js';
 import { ProductsPage } from '../pages/ProductsPage.js';
 import { ProductDetailsPage } from '../pages/ProductDetailsPage.js';
+import { PaymentPage } from '../pages/PaymentPage.js';
+import { PaymentDonePage } from '../pages/PaymentDonePage.js';
 
 interface FrameworkFixtures {
   homePage: HomePage;
@@ -18,6 +20,8 @@ interface FrameworkFixtures {
   productsApi: ProductsApiClient;
   provisionedAccount: TestAccountInput;
   productDetailsPage: ProductDetailsPage;
+  paymentPage: PaymentPage;
+  paymentDonePage: PaymentDonePage;
 }
 
 function buildUniqueAccount(workerIndex: number): TestAccountInput {
@@ -65,6 +69,12 @@ export const test = base.extend<FrameworkFixtures>({
   },
   productsApi: async ({ }, use) => {
     await use(new ProductsApiClient());
+  },
+  paymentPage: async ({ page }, use) => {
+    await use(new PaymentPage(page));
+  },
+  paymentDonePage: async ({ page }, use) => {
+    await use(new PaymentDonePage(page));
   },
 
   provisionedAccount: async ({ accountsApi }, use, testInfo) => {
