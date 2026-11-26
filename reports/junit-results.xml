@@ -1,6 +1,0 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.750155000000028">
-<testsuite name="ui\contactus\contactus.spec.ts" timestamp="2026-11-26T13:34:52.506Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.842" errors="0">
-<testcase name="Contact Us › @AE-19 @ui @contactussubmits the contact us form successfully" classname="ui\contactus\contactus.spec.ts" time="5.842">
-</testcase>
-</testsuite>
-</testsuites>

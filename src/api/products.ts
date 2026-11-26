@@ -82,6 +82,22 @@ export class ProductsApiClient {
     };
   }
 
+  async postProductsList(): Promise<{ responseCode: number; message: string }> {
+    const response = await fetch(`${this.baseUrl}/api/productsList`, {
+      method: "POST",
+    });
+
+    const text = await response.text();
+    const parsed = ProductsListResponseSchema.parse(
+      this.parseJsonPayload(text),
+    );
+
+    return {
+      responseCode: parsed.responseCode,
+      message: parsed.message ?? "",
+    };
+  }
+
   async searchProducts(query: string): Promise<ProductsListResult> {
     const body = new URLSearchParams({ search_product: query });
     const response = await fetch(`${this.baseUrl}/api/searchProduct`, {
@@ -118,4 +134,5 @@ export class ProductsApiClient {
       message: parsed.message ?? "",
     };
   }
+
 }

@@ -83,4 +83,5 @@ test.describe('Accounts & Auth API Contracts @api', () => {
     expect(body.responseCode).toBe(200);
     expect(body.user).toBeDefined();
   });
+  
 });

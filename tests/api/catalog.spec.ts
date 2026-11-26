@@ -35,6 +35,16 @@ test.describe("Catalog API Contracts @api", () => {
     );
     expect(hasMatchingNameOrCategory).toBe(true);
   });
+
+  test("@AE-23 @api returns responseCode 405 when POST is used on productsList", async ({
+    productsApi,
+  }) => {
+    const result = await productsApi.postProductsList();
+
+    expect(result.responseCode).toBe(405);
+    expect(result.message).toMatch(/method is not supported/i);
+  });
+
   //@AE-08 @api searches products without passing search_product parameter and expects 400 response code
   test("@AE-08 @api searches products without passing search_product parameter and expects 400 response code", async ({
     request,
@@ -45,7 +55,7 @@ test.describe("Catalog API Contracts @api", () => {
     expect(body.responseCode).toBe(400);
   });
   //@AE-10 @api All brands
-  test("@AE-10 @api get all brands", async ({ productsApi }) => {
+  test("@AE-10 @AE-24 @api get all brands", async ({ productsApi }) => {
     const result = await productsApi.listBrands();
     expect(result.responseCode).toBe(200);
     expect(result.brands.length).toBeGreaterThan(0);
@@ -56,4 +66,5 @@ test.describe("Catalog API Contracts @api", () => {
       }),
     );
   });
+  
 });
