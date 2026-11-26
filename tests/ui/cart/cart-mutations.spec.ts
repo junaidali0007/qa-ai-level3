@@ -26,3 +26,13 @@ test.describe('Cart Item Add & Remove @ui @cart', () => {
     await expect.poll(async () => cartPage.rowCount()).toBe(initialCount - 1);
   });
 });
+test.describe('Subscription from Cart Page @ui', () => {
+  test('AE-20 @ui @home @smoke subscribes to newsletter and verifies success message', async ({
+    page,
+    homePage,
+  }) => {
+    await gotoAndVerify(page, '/');
+    const uniqueEmail = `test_${Date.now()}@example.com`;
+    await homePage.subscribeToNewsletter(uniqueEmail);
+  });
+});

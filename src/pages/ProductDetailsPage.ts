@@ -15,6 +15,8 @@ export class ProductDetailsPage {
     readonly reviewEmailInput: Locator;
     readonly reviewTextInput: Locator;
     readonly submitReviewButton: Locator;
+    readonly reviewSuccessAlert: Locator;
+    readonly reviewSuccessMessage: Locator;
 
     constructor(private readonly page: Page) {
         this.productImage = page.locator('.view-product img');
@@ -31,6 +33,8 @@ export class ProductDetailsPage {
         this.reviewEmailInput = page.locator('#email');
         this.reviewTextInput = page.locator('#review');
         this.submitReviewButton = page.locator('#button-review');
+        this.reviewSuccessAlert = page.locator("#review-section .alert-success");
+        this.reviewSuccessMessage = page.locator("#review-section .alert-success span");
     }
 
     async expectLoaded(): Promise<void> {
@@ -58,44 +62,65 @@ export class ProductDetailsPage {
         }
     }
 
-   private parseRupeeAmount(rawText: string): number {
-  const numericValue = Number(
-    rawText.replace(/^Rs\.\s*/i, "").replace(/[^\d.]/g, "").trim(),
-  );
-  expect(Number.isFinite(numericValue)).toBe(true);
-  return numericValue;
-}
+    private parseRupeeAmount(rawText: string): number {
+        const numericValue = Number(
+            rawText.replace(/^Rs\.\s*/i, "").replace(/[^\d.]/g, "").trim(),
+        );
+        expect(Number.isFinite(numericValue)).toBe(true);
+        return numericValue;
+    }
 
-// @AE-12 @ui @catalog increase quantity on product detail page, add to cart and verify cart page quantity and total price
-async addProductToCartAndVerify(p0: string, quantity = 3): Promise<void> {
-  await this.expectLoaded();
-  await expect(this.price).toBeVisible();
+    // @AE-12 @ui @catalog increase quantity on product detail page, add to cart and verify cart page quantity and total price
+    async addProductToCartAndVerify(p0: string, quantity = 3): Promise<void> {
+        await this.expectLoaded();
+        await expect(this.price).toBeVisible();
 
-  const productName = (await this.productName.innerText()).trim();
-  const unitPrice = this.parseRupeeAmount(await this.price.innerText());
-  expect(unitPrice).toBeGreaterThan(0);
+        const productName = (await this.productName.innerText()).trim();
+        const unitPrice = this.parseRupeeAmount(await this.price.innerText());
+        expect(unitPrice).toBeGreaterThan(0);
 
-  await this.quantityInput.fill(String(quantity));
-  await this.addToCartButton.click();
+        await this.quantityInput.fill(String(quantity));
+        await this.addToCartButton.click();
 
-  await this.page
-    .locator(".modal-content")
-    .getByRole("link", { name: /view cart/i })
-    .click();
+        await this.page
+            .locator(".modal-content")
+            .getByRole("link", { name: /view cart/i })
+            .click();
 
-  await expect(this.page).toHaveURL(/\/view_cart/);
+        await expect(this.page).toHaveURL(/\/view_cart/);
 
-  const cartRow = this.page
-    .locator("#cart_info_table tbody tr[id^='product-']")
-    .filter({ hasText: productName })
-    .first();
+        const cartRow = this.page
+            .locator("#cart_info_table tbody tr[id^='product-']")
+            .filter({ hasText: productName })
+            .first();
 
-  await expect(cartRow).toBeVisible();
-  await expect(cartRow.locator(".cart_quantity button")).toHaveText(String(quantity));
+        await expect(cartRow).toBeVisible();
+        await expect(cartRow.locator(".cart_quantity button")).toHaveText(String(quantity));
 
-  const total = this.parseRupeeAmount(
-    await cartRow.locator(".cart_total p").innerText(),
-  );
-  expect(total).toBe(unitPrice * quantity);
+        const total = this.parseRupeeAmount(
+            await cartRow.locator(".cart_total p").innerText(),
+        );
+        expect(total).toBe(unitPrice * quantity);
+    }
+ async submitReviewAndVerify(
+  name: string,
+  email: string,
+  review: string,
+): Promise<string> {
+  await this.reviewNameInput.scrollIntoViewIfNeeded();
+  await this.reviewNameInput.fill(name);
+  await this.reviewEmailInput.fill(email);
+  await this.reviewTextInput.fill(review);
+
+  await Promise.all([
+    this.reviewSuccessAlert.waitFor({ state: "visible", timeout: 4000 }),
+    this.submitReviewButton.click(),
+  ]);
+
+  await expect(this.reviewSuccessMessage).toHaveText(/thank you for your review\.?/i, {
+    timeout: 4000,
+  });
+
+  return (await this.reviewSuccessMessage.innerText()).trim();
 }
 }

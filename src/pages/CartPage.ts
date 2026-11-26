@@ -1,8 +1,10 @@
 import type { Locator, Page } from '@playwright/test';
 
+
 export class CartPage {
   readonly proceedToCheckoutButton: Locator;
   readonly cartRows: Locator;
+
 
   constructor(private readonly page: Page) {
     this.proceedToCheckoutButton = page.getByText(/proceed to checkout/i);
@@ -24,4 +26,5 @@ export class CartPage {
   async removeItemAt(rowIndex: number): Promise<void> {
     await this.removeItemButtonForRow(rowIndex).click();
   }
+  
 }
