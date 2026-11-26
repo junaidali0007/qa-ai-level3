@@ -13,7 +13,7 @@ export class CartPage {
   readonly removeItemButtons: Locator;
 
   constructor(private readonly page: Page) {
-    this.proceedToCheckoutButton = page.locator("#cart_info .check_out");
+    this.proceedToCheckoutButton = page.getByText(/proceed to checkout/i);
     this.cartTable = page.locator("#cart_info_table");
     this.cartRows = this.cartTable.locator('tbody tr[id^="product-"]');
     this.emptyCartMessage = page.locator("#empty_cart p");
