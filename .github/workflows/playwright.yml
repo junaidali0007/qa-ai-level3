@@ -33,11 +33,11 @@ jobs:
       - name: Run TypeScript typecheck
         run: npm run typecheck
 
-      - name: Run Playwright suite (single worker)
+      - name: Run Playwright suite (two worker)
         env:
           CI: true
           BASE_URL: ${{ vars.BASE_URL || 'https://automationexercise.com' }}
-        run: npx playwright test --workers=1
+        run: npx playwright test --workers=2
 
       - name: Collect & analyze RCA
         if: always()
