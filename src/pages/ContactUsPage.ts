@@ -31,14 +31,18 @@ export class ContactUsPage {
 		email: string,
 		subject: string,
 		message: string,
-		filePath?: string,
+		filePayload?: string | { name: string; mimeType: string; buffer: Buffer },
 	): Promise<void> {
 		await this.nameInput.fill(name);
 		await this.emailInput.fill(email);
 		await this.subjectInput.fill(subject);
 		await this.messageInput.fill(message);
-		if (filePath) {
-			await this.fileUploadInput.setInputFiles(filePath);
+		if (filePayload) {
+			if (typeof filePayload === 'string') {
+				await this.fileUploadInput.setInputFiles(filePayload);
+			} else {
+				await this.fileUploadInput.setInputFiles([filePayload]);
+			}
 		}
 
 		this.page.once('dialog', async (dialog) => {

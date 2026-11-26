@@ -8,7 +8,11 @@ test.describe('Contact Us', () => {
         await assertNoInterstitialBlock(page);
         await contactUsPage.fillContactFormAndSubmit('Test User', 'test.user@example.com',
             'Question about an order', 'I would like to ask a question about my order.',
-            'C:/Users/HP/Desktop/testfile.txt');
+            {
+                name: 'testfile.txt',
+                mimeType: 'text/plain',
+                buffer: Buffer.from('Sample contact attachment for automated CI test.'),
+            },);
         await contactUsPage.verifySuccessMessage();
     });
 });
