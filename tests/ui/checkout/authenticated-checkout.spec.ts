@@ -64,7 +64,10 @@ test.describe("E2E flow of customer purchase journey @ui @catalog @checkout", ()
       await checkoutPage.enterCommentAndPlaceOrder(
         "Please deliver between 9 AM and 5 PM.",
       );
+      await expect(page).toHaveURL(/\/payment\/?$/);
       await assertNoInterstitialBlock(page);
+      await expect(paymentPage.heading).toBeVisible();
+      await expect(paymentPage.nameOnCardInput).toBeVisible();
     });
 
     await test.step("Enter payment details and confirm order", async () => {
