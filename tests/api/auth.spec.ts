@@ -1,7 +1,7 @@
 import { test, expect } from '../../src/fixtures/testFixtures.js';
 
 test.describe('Accounts & Auth API Contracts @api', () => {
-  test('@AE-02 verifies provisioned account credentials via verifyLogin', async ({
+  test('@AE-02 @smoke verifies provisioned account credentials via verifyLogin', async ({
     accountsApi,
     provisionedAccount,
   }) => {
@@ -74,7 +74,7 @@ test.describe('Accounts & Auth API Contracts @api', () => {
     expect(duplicateResponse.message).toMatch(/Email already exists!/i);
   });
   //@AE-22 @api get user account details by email
-  test('@AE-22 @api get user account details by email', async ({ request, provisionedAccount }) => {
+  test('@AE-22 @api @smoke get user account details by email', async ({ request, provisionedAccount }) => {
     const response = await request.get('/api/getUserDetailByEmail', {
       params: { email: provisionedAccount.email },
     });
@@ -83,5 +83,5 @@ test.describe('Accounts & Auth API Contracts @api', () => {
     expect(body.responseCode).toBe(200);
     expect(body.user).toBeDefined();
   });
-  
+
 });

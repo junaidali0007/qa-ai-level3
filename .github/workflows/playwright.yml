@@ -37,7 +37,7 @@ jobs:
         env:
           CI: true
           BASE_URL: ${{ vars.BASE_URL || 'https://automationexercise.com' }}
-        run: npx playwright test --workers=2
+        run: npm run test:ci
 
       - name: Collect & analyze RCA
         if: always()

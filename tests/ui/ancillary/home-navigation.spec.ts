@@ -38,7 +38,7 @@ test.describe("Home & Ancillary Navigation @ui @ancillary @smoke", () => {
 });
 
 test.describe("Subscription from Home Page @ui", () => {
-  test("AE-20 @ui @home @smoke subscribes to newsletter and verifies success message", async ({
+  test("AE-20 @ui @home subscribes to newsletter and verifies success message", async ({
     page,
     homePage,
   }) => {

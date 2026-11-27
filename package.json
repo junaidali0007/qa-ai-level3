@@ -9,6 +9,8 @@
     "format:check": "prettier --check \"**/*.{ts,md,json,yml}\"",
     "test": "playwright test",
     "test:smoke": "playwright test --grep @smoke",
+    "test:non-smoke": "playwright test --grep-invert @smoke",
+    "test:ci": "npm run test:smoke && npm run test:non-smoke",
     "test:ui": "playwright test tests/ui",
     "test:api": "playwright test tests/api",
     "rca:collect": "tsx tools/rca/collect.ts",

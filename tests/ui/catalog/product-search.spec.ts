@@ -8,7 +8,7 @@ test.describe('Product Catalog Search @ui @catalog', () => {
     productsPage,
   }) => {
     await gotoAndVerify(page, '/');
-
+    await assertNoInterstitialBlock(page);
     await homePage.openProducts();
     await assertNoInterstitialBlock(page);
 
@@ -103,4 +103,4 @@ test('@AE-14 Search product, Add to Cart, verify products in cart, login and ver
     });
 
   });
-  
+
