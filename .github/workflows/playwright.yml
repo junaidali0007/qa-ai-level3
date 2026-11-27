@@ -44,7 +44,7 @@ jobs:
         env:
           BASE_URL: ${{ vars.BASE_URL || 'https://automationexercise.com' }}
           AI_PROVIDER: gemini
-          AI_MODEL: gemini-2.5-flash
+          AI_MODEL: gemini-flash-lite-latest
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
         run: |
           npm run rca:collect

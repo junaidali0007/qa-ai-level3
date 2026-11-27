@@ -37,6 +37,8 @@ export type FallbackReason =
   | "interstitial_policy"
   | "unsupported_provider"
   | "ai_http_error"
+  | "ai_model_retired"
+  | "ai_overloaded"
   | "ai_schema_validation_failed"
   | "ai_network_or_timeout";
 
@@ -70,11 +72,36 @@ const AiFindingSchema = z.object({
   recommendedAction: z.string().min(10).max(600),
 });
 
+/**
+ * Model selection is evidence-based, not aspirational:
+ *
+ * - `gemini-2.5-flash` (the previous default) returns HTTP 404 for API keys issued after
+ *   Google retired it for new users: "no longer available to new users ... use
+ *   models/gemini-3.8-flash". It is still advertised by ListModels, so availability must be
+ *   confirmed by CALLING a model, never by listing one.
+ * - `gemini-3.8-flash`, the provider's own suggested replacement, returned HTTP 503
+ *   ("experiencing high demand") on every attempt during verification, as did `-3.6-` and
+ *   `-3.5-flash`.
+ * - `gemini-flash-lite-latest` answered successfully and returned a schema-valid
+ *   classification, so it is the default until the larger flash tiers free up.
+ *
+ * See docs/rca-ai-review-log.md Entry 2 for the verbatim provider responses.
+ */
+const DEFAULT_AI_MODEL = "gemini-flash-lite-latest";
+
+const RETRYABLE_HTTP_STATUSES = new Set([429, 503]);
+const AI_MAX_ATTEMPTS = 3;
+const AI_RETRY_BASE_MS = 1_000;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function sanitizeText(raw: string, maxLength = 1500): string {
   const redacted = raw
     .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[REDACTED_EMAIL]")
     .replace(
-      /\b(Bearer\s+|sk-|AIza)[A-Za-z0-9\-_]{10,}\b/g,
+      /\b(Bearer\s+|sk-|AIza|AQ\.)[A-Za-z0-9\-_.]{10,}/g,
       "[REDACTED_SECRET]",
     )
     .replace(/\b(?:\d[ -]*?){13,19}\b/g, "[REDACTED_NUMBER]");
@@ -209,36 +236,74 @@ async function classifyWithGemini(
 
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
 
-  try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": apiKey,
+  const requestBody = JSON.stringify({
+    systemInstruction: {
+      parts: [{ text: systemInstructionText }],
+    },
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: untrustedPayload }],
       },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: systemInstructionText }],
-        },
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: untrustedPayload }],
-          },
-        ],
-        generationConfig: {
-          temperature: 0.1,
-          responseMimeType: "application/json",
-        },
-      }),
-      signal: AbortSignal.timeout(15_000),
-    });
+    ],
+    generationConfig: {
+      temperature: 0.1,
+      responseMimeType: "application/json",
+    },
+  });
 
-    if (!response.ok) {
+  try {
+    // Transient capacity errors (503 UNAVAILABLE / 429 RESOURCE_EXHAUSTED) are retried
+    // with bounded backoff so a demand spike does not silently degrade the whole run to
+    // the deterministic path. Retired-model (404) and other errors are not retried: they
+    // are configuration faults that retrying cannot resolve.
+    let response: Response | null = null;
+    let lastStatus = 0;
+
+    for (let attempt = 0; attempt < AI_MAX_ATTEMPTS; attempt++) {
+      if (attempt > 0) {
+        const backoffMs = AI_RETRY_BASE_MS * 2 ** (attempt - 1);
+        console.warn(
+          `Gemini RCA request returned HTTP ${lastStatus}; retrying in ${backoffMs}ms (attempt ${attempt + 1}/${AI_MAX_ATTEMPTS}).`,
+        );
+        await sleep(backoffMs);
+      }
+
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
+        },
+        body: requestBody,
+        signal: AbortSignal.timeout(15_000),
+      });
+
+      lastStatus = response.status;
+      if (response.ok || !RETRYABLE_HTTP_STATUSES.has(response.status)) break;
+    }
+
+    if (!response || !response.ok) {
+      const status = lastStatus;
+      const detail = response ? sanitizeText(await response.text(), 300) : "";
+
+      // A retired model reports 404 NOT_FOUND with an explicit upgrade hint; surfacing it
+      // separately keeps "we configured the wrong model" distinguishable from "the provider
+      // was busy" in the audit trail, instead of collapsing both into ai_http_error.
+      const isRetiredModel =
+        status === 404 && /no longer available|not found/i.test(detail);
+      const reason: FallbackReason = isRetiredModel
+        ? "ai_model_retired"
+        : RETRYABLE_HTTP_STATUSES.has(status)
+          ? "ai_overloaded"
+          : "ai_http_error";
+
       console.warn(
-        `Gemini RCA request returned HTTP ${response.status}; falling back to deterministic rule.`,
+        `Gemini RCA request failed with HTTP ${status} (${reason}); falling back to deterministic rule.${
+          isRetiredModel ? ` Provider detail: ${detail}` : ""
+        }`,
       );
-      return { finding: null, reason: "ai_http_error" };
+      return { finding: null, reason };
     }
 
     const payload = (await response.json()) as {
@@ -301,7 +366,7 @@ export async function analyzeBundle(
   fs.mkdirSync(outDir, { recursive: true });
 
   const provider = (process.env.AI_PROVIDER || "gemini").trim().toLowerCase();
-  const model = (process.env.AI_MODEL || "gemini-2.5-flash").trim();
+  const model = (process.env.AI_MODEL || DEFAULT_AI_MODEL).trim();
   const apiKey = process.env.AI_API_KEY?.trim() || "";
   const hasAiKey = apiKey.length > 0;
 
