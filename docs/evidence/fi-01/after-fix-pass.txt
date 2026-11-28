@@ -1,0 +1,8 @@
+PS C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3> npx playwright test tests/ui/catalog/product-detail.spec.ts --reporter=list
+
+Running 2 tests using 2 workers
+
+  ✓  1 …ts:6:3 › Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total (6.9s)
+  ✓  2 …ium] › tests\ui\catalog\product-detail.spec.ts:20:3 › Product Detail page @ui @catalog › @AE-18 @ui @catalog submit product review and verify success message (5.5s)
+
+  2 passed (7.6s)

@@ -87,7 +87,47 @@ Once the model was corrected, the analyzer returned a schema-valid, evidence-gro
 - **Date (PKT / UTC):** `<YYYY-MM-DD>`
 
 ---
+### Entry 3 — `2026-11-28` | `fi-01-script-fault` (FI-01 controlled script fault)
 
+- **Run Context:** Local run on branch `fi-01-script-fault`, cut from `main` @ `db887a60` ("Decrease Smoke tests"). Target test: `tests/ui/catalog/product-detail.spec.ts` (`@AE-12`).
+- **Execution Mode:** `ai-assisted`
+- **Provider / Model:** `gemini` / `gemini-flash-lite-latest`
+- **Injected Fault:** commit `76d127898a6e35b4a1eab62450141d9113fb2a66` changed `src/pages/ProductDetailsPage.ts:103` from `expect(total).toBe(unitPrice * quantity)` to `expect(total).toBe(unitPrice * (quantity + 1))`, making the test assert an arithmetically wrong cart total while the application remained untouched.
+- **Repair:** commit `6d14cb0239faf6f5f72727afe9ddd244b8cbee5f` restored the original oracle. Minimal patch (one line): https://github.com/junaidali0007/qa-ai-level3/compare/76d127898a6e35b4a1eab62450141d9113fb2a66...6d14cb0239faf6f5f72727afe9ddd244b8cbee5f
+
+#### AI RCA Output Summary
+
+- **Category:** `PRODUCT_DEFECT`
+- **Severity:** `MEDIUM`
+- **Confidence:** `0.85`
+- **Summary:** `The test asserted a cart total or quantity of 2000, but the application calculated or displayed 1500, indicating a potential logic defect in the cart calculation.`
+- **Recommended Action:** `Investigate the product's pricing logic or cart calculation service on the backend/frontend to ensure quantity increases correctly update the total to 2000.`
+
+#### Critical Review, Challenges & Corrections
+
+- **Agreement / Discrepancy: REJECTED.** The AI classified an injected test-side fault as `PRODUCT_DEFECT` at 0.85 confidence. The correct classification is `TEST_SCRIPT_DEFECT`. This is precisely the error the assignment prohibits ("do not claim a real product defect from injected behavior"), and it was caught by human review rather than by the tooling.
+
+- **Evidence ruling out `PRODUCT_DEFECT`:** the application was never modified and behaved identically throughout. `docs/evidence/fi-01/before-pass.txt` (before injection) and `docs/evidence/fi-01/after-fix-pass.txt` (after repair) both pass against the same live site, with commit `76d1278` as the only intervening change — and that commit touches a test oracle, not application code. The site's rendered cart total was correct in every run. `docs/evidence/fi-01/error-context.md` is the exact input the collector passed to the classifier and contains no application-side anomaly.
+
+- **Why the model could not have known:** the telemetry contract in `tools/rca/analyze.ts` sends only `testTitle`, `sanitizedErrorMessage`, `availableArtifacts` and `hasTraceOrScreenshot`. It sends no code diff and no commit SHA, both of which the RCA specification lists under the "Collect" stage. A wrong expected value in a test and a wrong computed value in the application produce byte-identical telemetry, so the discriminating evidence was never available. The misclassification is therefore traceable to a gap in evidence collection, not to model judgement alone.
+
+- **Second finding — miscalibrated confidence:** `analyze.ts` caps confidence at 0.55 only when no screenshot or trace exists (`hasVisualOrTrace`). This run had both, so the raw 0.85 passed through uncapped. The guard keys on artifact *presence* rather than artifact *relevance*: `test-failed-1.png` and `trace.zip` prove the interaction occurred but cannot discriminate between the competing hypotheses. The guard did not merely fail to fire — it permitted the overclaim. Per the RCA specification an unverified hypothesis must read as low-confidence or `UNKNOWN`, never as fact; 0.85 states it as fact.
+
+- **Deterministic comparison:** the deterministic path alone would have returned `UNKNOWN` at 0.40 for this error shape, because `expect(received).toBe(expected)` matches none of the interstitial, network, timeout or strict-mode rules in `classifyDeterministically()`. For this fault the deterministic fallback was the **safer** answer — uncertain and honest rather than confident and wrong.
+
+- **Corrections Made:** the injected oracle was reverted in `6d14cb0` and the test verified passing (`after-fix-pass.txt`). Neither the deterministic rules nor the model prompt were changed before recording this result, so the evidence reflects the system as it actually behaved. Follow-up identified and deferred: (1) cap `PRODUCT_DEFECT` confidence below 0.5 unless code-diff evidence corroborates it; (2) instruct the model that an assertion mismatch alone cannot support `PRODUCT_DEFECT`; (3) extend `collect.ts` to gather commit SHA and recent diffs per the "Collect" stage.
+
+- **Privacy / Guardrail Notes:** No product defect is claimed against automationexercise.com. The fault was introduced deliberately by the engineer, is confined to a branch that is never merged, and the failure is test-controlled by construction. The API key was supplied via environment variable only and appears nowhere in the repository, in `report.json`/`report.md`, or in this log. Failure telemetry remained inside the `UNTRUSTED_TELEMETRY` envelope.
+
+- **RCA accuracy on this injection: 0 / 1.** Recorded as a miss. The analyzer was not re-run to obtain a more favourable classification.
+
+#### Human Sign-Off
+
+- **Reviewer:** Junaid
+- **Decision:** AI classification **rejected**; human classification `TEST_SCRIPT_DEFECT` adopted; repair validated and approved.
+- **Date (PKT / UTC):** 2026-11-28
+
+---
 ## Additional Entry Template (Copy for Next Finding)
 
 ### Entry `<N>` — `<YYYY-MM-DD>` | `<Test ID or Run / PR Reference>`
