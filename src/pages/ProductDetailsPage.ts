@@ -100,8 +100,7 @@ export class ProductDetailsPage {
         const total = this.parseRupeeAmount(
             await cartRow.locator(".cart_total p").innerText(),
         );
-        //revert this line
-         expect(total).toBe(unitPrice * (quantity + 1));
+         expect(total).toBe(unitPrice * quantity);
     }
  async submitReviewAndVerify(
   name: string,
