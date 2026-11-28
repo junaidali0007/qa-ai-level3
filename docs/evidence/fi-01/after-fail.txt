@@ -1,0 +1,51 @@
+PS C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3> npx playwright test tests/ui/catalog/product-detail.spec.ts --reporter=list
+
+Running 2 tests using 2 workers
+
+  ✘  1 …ts:6:3 › Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total (8.6s)
+  ✓  2 …ium] › tests\ui\catalog\product-detail.spec.ts:20:3 › Product Detail page @ui @catalog › @AE-18 @ui @catalog submit product review and verify success message (6.3s)
+
+
+  1) [chromium] › tests\ui\catalog\product-detail.spec.ts:6:3 › Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2000
+    Received: 1500
+
+       at ..\src\pages\ProductDetailsPage.ts:104
+
+      102 |         );
+      103 |         //revert this line
+    > 104 |          expect(total).toBe(unitPrice * (quantity + 1));
+          |                        ^
+      105 |     }
+      106 |  async submitReviewAndVerify(
+      107 |   name: string,
+        at ProductDetailsPage.addProductToCartAndVerify (C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\src\pages\ProductDetailsPage.ts:104:24)
+        at C:\Users\HP\VisualStudioCodeProjects\qa-ai-level3\tests\ui\catalog\product-detail.spec.ts:16:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\ui\catalog\product-detail.spec.ts:6:3 › Product Detail page @ui @catalog › @AE-12 @ui @catalog open first product details, increase quantity, add to cart and verify cart quantity and total 
+  1 passed (9.4s)
+
+  Record the repair SHA too.
+  6d14cb0239faf6f5f72727afe9ddd244b8cbee5f

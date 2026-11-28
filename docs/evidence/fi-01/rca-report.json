@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-11-28T11:31:05.879Z",
+  "mode": "ai-assisted",
+  "provider": "gemini",
+  "model": "gemini-flash-lite-latest",
+  "hasAiKey": true,
+  "findings": [
+    {
+      "failureId": "FAIL-1",
+      "title": "ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium",
+      "category": "PRODUCT_DEFECT",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "source": "ai-assisted",
+      "fallbackReason": "none",
+      "summary": "The test asserted a cart total or quantity of 2000, but the application calculated or displayed 1500, indicating a potential logic defect in the cart calculation.",
+      "evidence": [
+        "test-results/ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium/error-context.md",
+        "test-results/ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium/test-failed-1.png",
+        "test-results/ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium/trace.zip",
+        "test-results/ui-catalog-product-detail--875c4-ify-cart-quantity-and-total-chromium/video.webm"
+      ],
+      "recommendedAction": "Investigate the product's pricing logic or cart calculation service on the backend/frontend to ensure quantity increases correctly update the total to 2000."
+    }
+  ]
+}
