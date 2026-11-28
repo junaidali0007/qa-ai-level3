@@ -1,7 +1,7 @@
 import { test, expect } from '../../src/fixtures/testFixtures.js';
 
 test.describe('Accounts & Auth API Contracts @api', () => {
-  test('@AE-02 @smoke verifies provisioned account credentials via verifyLogin', async ({
+  test('@AE-02 verifies provisioned account credentials via verifyLogin', async ({
     accountsApi,
     provisionedAccount,
   }) => {
